@@ -1,0 +1,140 @@
+import requests
+import time
+from bs4 import BeautifulSoup
+import pandas as pd
+import pickle
+import os
+
+# The current script's directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+def fetch_wiki_page(url, headers):
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        if response.status_code == 200:
+            return BeautifulSoup(response.text, 'html.parser')
+        return None
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching {url}: {e}")
+        return None
+
+
+def clean_text(text):
+    # Replace Zero-Width Non-Joiner with space
+    text = text.replace('\u200c', ' ')
+    # Replace Zero-Width Space
+    text = text.replace('\u200b', ' ')
+    # Replace other special spaces
+    text = text.replace('\u200d', ' ')
+    text = text.replace('\ufeff', ' ')
+    # Normalize multiple spaces
+    text = ' '.join(text.split())
+    return text
+
+
+def extract_events_deaths(soup, year):
+    events = []
+    deaths = []
+    persian_months = {
+        "فروردین": 1, "اردیبهشت": 2, "خرداد": 3,
+        "تیر": 4, "مرداد": 5, "شهریور": 6,
+        "مهر": 7, "آبان": 8, "آذر": 9,
+        "دی": 10, "بهمن": 11, "اسفند": 12
+    }
+    # Extract events
+    h2_events = soup.find('h2', id='رویدادها')
+    if h2_events:
+        parent_div = h2_events.parent
+        next_ul = parent_div.find_next_sibling('ul')
+        if next_ul:
+            for event in next_ul.find_all('li'):
+                text = clean_text(event.get_text(strip=True)) 
+                links = event.find_all('a')
+                if len(links) >= 2:
+                    # Extract date if available
+                    day = None
+                    month = None
+                    for m_name in persian_months.keys():
+                        if m_name in text:
+                            try:
+                                date_part = text.split('*')[0] if '*' in text else text.split('،')[0]
+                                day = int(''.join(filter(str.isdigit, date_part)))
+                                month = persian_months[m_name]
+                                break
+                            except (ValueError, IndexError):
+                                continue
+
+                    events.append({
+                        'year': year,
+                        'month': month,
+                        'day': day,
+                        'title': text,  # Store complete text
+                        'link': 'https://fa.wikipedia.org' + links[1].get('href') if links[1].get('href').startswith('/') else links[1].get('href'),
+                        'category': 'Event'
+                    })
+
+    # Extract deaths
+    h2_deaths = soup.find('h2', id='درگذشت‌ها')
+    if h2_deaths:
+        parent_div = h2_deaths.parent
+        next_ul = parent_div.find_next_sibling('ul')
+        if next_ul:
+            for death in next_ul.find_all('li'):
+                text = clean_text(death.get_text(strip=True))
+                links = death.find_all('a')
+                if len(links) >= 2:
+                    # Extract date if available
+                    day = None
+                    month = None
+                    for m_name in persian_months.keys():
+                        if m_name in text:
+                            try:
+                                date_part = text.split('*')[0] if '*' in text else text.split('،')[0]
+                                day = int(''.join(filter(str.isdigit, date_part)))
+                                month = persian_months[m_name]
+                                break
+                            except (ValueError, IndexError):
+                                continue
+
+                    deaths.append({
+                        'year': year,
+                        'month': month,
+                        'day': day,
+                        'title': text,  # Store complete text
+                        'link': 'https://fa.wikipedia.org' + links[1].get('href') if links[1].get('href').startswith('/') else links[1].get('href'),
+                        'category': 'Death'
+                    })
+    
+    return events, deaths
+# Read the CSV file with year links
+years_df = pd.read_csv(os.path.join(script_dir, "years_with_url.csv"))
+    
+all_events = []
+all_deaths = []
+    
+headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+    }
+
+    # Process each year
+for index, row in years_df.iterrows():
+        url = row['Wiki_URL']
+        year = row['Year']
+        print(f"Processing year {year}...")
+        
+        soup = fetch_wiki_page(url, headers)
+        if soup:
+            events, deaths = extract_events_deaths(soup, year)
+            all_events.extend(events)
+            all_deaths.extend(deaths)
+            time.sleep(1)  # Be nice to Wikipedia servers
+    
+    # Convert to DataFrames
+events_df = pd.DataFrame(all_events)
+deaths_df = pd.DataFrame(all_deaths)
+    
+    # Save to CSV
+events_df.to_csv(os.path.join(script_dir, 'events.csv'), index=False, encoding='utf-8-sig')
+deaths_df.to_csv(os.path.join(script_dir, 'deaths.csv'), index=False, encoding='utf-8-sig')
+    
+print("Data collection completed!")

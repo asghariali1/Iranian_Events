@@ -66,7 +66,25 @@
             margin-bottom: 15px;
             color: #555;
         }
+        date-point {
+    position: absolute;
+    bottom: -30px;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 12px;
+    color: #667eea;
+}
 
+.date-point::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 8px;
+    background: #667eea;
+}
         textarea {
             width: 100%;
             height: 120px;
@@ -108,36 +126,51 @@
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
-        .timeline-container {
-            position: relative;
-            margin-top: 40px;
-            padding: 20px 0;
-        }
+    .timeline-container {
+        position: relative;
+        margin-top: 40px;
+        padding: 20px 0;
+        overflow-x: auto;  
+        white-space: nowrap;
+        margin-bottom: 40px;
+    }
 
         .timeline {
-            position: relative;
-            max-width: 100%;
+    position: relative;
+    display: inline-flex; 
+    min-width: 100%;
+    padding: 100px 0;  /* Space for era text */
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: translateY(-50%);
+}
 
-        .timeline-item {
-            position: relative;
-            margin: 30px 0;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s ease forwards;
-        }
+.timeline-item {
+    display: inline-block;
+    margin: 0 30px;
+    min-width: 300px;
+    white-space: normal;  /* Allow text wrapping inside items */
+}
+.era-indicator {
+    position: absolute;
+    top: 0;
+    font-size: 6rem;
+    color: rgba(102, 126, 234, 0.1);
+    font-weight: bold;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
 
         .timeline-item:nth-child(even) {
             animation-delay: 0.1s;
@@ -166,8 +199,29 @@
             text-align: right;
             direction: rtl;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transform-origin: center bottom;
+            margin: 20px 0;
+     
         }
+        .importance-high {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.importance-very-high {
+    transform: scale(1.2);
+    z-index: 3;
+}
+
+.importance-low {
+    transform: scale(0.9);
+    z-index: 1;
+}
+
+.importance-very-low {
+    transform: scale(0.8);
+    z-index: 0;
+}
         .timeline-content.expanded {
     width: 80%;
     margin-left: auto !important;
@@ -219,7 +273,16 @@
 .timeline-date.event {
     background: linear-gradient(45deg, #4a90e2, #357abd);
 }
-
+.importance-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #667eea;
+}
 .timeline-date.death {
     background: linear-gradient(45deg, #e24a4a, #bd3535);
 }
@@ -231,11 +294,13 @@
         .timeline-item:nth-child(odd) .timeline-content {
             margin-right: 55%;
             margin-left: 0;
+            margin-top: 60px;
         }
 
         .timeline-item:nth-child(even) .timeline-content {
             margin-right: 0;
             margin-left: 55%;
+                margin-bottom: 60px;
         }
 
         .timeline-date {
@@ -335,7 +400,27 @@
             color: white;
             transform: translateY(-2px);
         }
+        .year-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #667eea;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 5;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    margin-top: 30px;
+}
 
+.year-marker {
+    position: relative;
+    padding-top: 60px;
+    margin-top: 20px;
+    border-top: 2px solid rgba(102, 126, 234, 0.2);
+}
         @media (max-width: 768px) {
             .timeline::before {
                 right: 20px;
@@ -358,60 +443,113 @@
                 width: 250px;
             }
         }
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
+/* Custom scrollbar */
+.timeline-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 4px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 4px;
+}
+
+/* Add smooth scrolling */
+.timeline-container {
+    scroll-behavior: smooth;
+}
+
+/* Add navigation buttons */
+.timeline-nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.nav-btn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Interactive Timeline Creator</h1>
-            <p>Transform your events data into a beautiful, interactive timeline</p>
+            <h1>Iranian Historical Events Timeline</h1>
         </div>
 
-        <div class="data-input">
-            <h3>Enter your events data (JSON format)</h3>
-            <textarea id="dataInput" placeholder='Example format:
-[
-  {
-    "date": "2024-01-15",
-    "title": "Project Launch",
-    "description": "Successfully launched our new product to the market",
-    "category": "Business"
-  },
-  {
-    "date": "2024-02-20",
-    "title": "Team Expansion",
-    "description": "Added 5 new team members to support growth",
-    "category": "HR"
-  }
-]'></textarea>
-            
-            <div class="sample-data">
-                <strong>Supported formats:</strong> JSON array with date, title, description, and optional category fields
-            </div>
-        </div>
-
-        <div class="buttons">
-            <button class="btn" onclick="loadSampleData()">Load Sample Data</button>
-            <button class="btn" onclick="generateTimeline()">Generate Timeline</button>
-            <button class="btn" onclick="clearTimeline()">Clear</button>
-            <button class="btn" onclick="loadJsonFile()">Load Timeline from JSON</button>
-        </div>
-
-        <div class="controls" id="controls" style="display: none;">
-            <input type="text" class="search-box" id="searchBox" placeholder="Search events..." oninput="filterTimeline()">
-            <div class="filter-buttons" id="filterButtons"></div>
-        </div>
-
-        <div class="timeline-container" id="timelineContainer">
-            <div id="timeline" class="timeline"></div>
-        </div>
+ <div class="controls" id="controls">
+        <input type="text" class="search-box" id="searchBox" placeholder="Search events..." oninput="filterTimeline()">
+        <div class="filter-buttons" id="filterButtons"></div>
     </div>
 
+    <div class="timeline-container" id="timelineContainer">
+        <div id="timeline" class="timeline"></div>
+    </div>
+    <div class="timeline-nav">
+    <button class="nav-btn" onclick="scrollTimeline('left')">←</button>
+    <button class="nav-btn" onclick="scrollTimeline('right')">→</button>
+</div>
+</div>
     <script>
         let timelineData = [];
         let filteredData = [];
         let categories = new Set();
+        document.querySelector('.timeline-container').addEventListener('wheel', function(e) {
+    if (e.deltaY !== 0) {
+        e.preventDefault();
+        this.scrollLeft += e.deltaY;
+    }
+});
+        // Load data automatically when page loads
+    window.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const response = await fetch('combined_data.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            
+            if (!Array.isArray(data)) {
+                throw new Error('Data must be an array');
+            }
+
+            timelineData = data;
+            // Sort by date
+            timelineData.sort((a, b) => new Date(a.date) - new Date(b.date));
+            
+            // Extract unique categories
+            categories.clear();
+            timelineData.forEach(item => {
+                if (item.category) {
+                    categories.add(item.category);
+                }
+            });
+
+            filteredData = [...timelineData];
+            renderTimeline();
+            setupControls();
+            
+            document.getElementById('controls').style.display = 'block';
+        } catch (error) {
+            console.error("Error loading data:", error);
+            document.getElementById('timeline').innerHTML = 
+                '<div class="error">Error loading timeline data. Please try again later.</div>';
+        }
+    });
 
         function loadSampleData() {
             const sampleData = [
@@ -493,15 +631,73 @@
                 console.error(error);
             }
         }
-
+        function scrollTimeline(direction) {
+    const container = document.querySelector('.timeline-container');
+    const scrollAmount = 600;
+    if (direction === 'left') {
+        container.scrollLeft -= scrollAmount;
+    } else {
+        container.scrollLeft += scrollAmount;
+    }
+}
         function renderTimeline() {
     const timelineElement = document.getElementById('timeline');
     timelineElement.innerHTML = '';
 
+    // Find the date range
+    const dates = filteredData.map(item => new Date(item.date));
+    const minDate = new Date(Math.min(...dates));
+    const maxDate = new Date(Math.max(...dates));
+    const yearSpan = maxDate.getFullYear() - minDate.getFullYear();
+
+        const interval = yearSpan > 50 ? 10 : 5; // Adjust interval based on span
+    for (let year = minDate.getFullYear(); year <= maxDate.getFullYear(); year += interval) {
+        const datePoint = document.createElement('div');
+        datePoint.className = 'date-point';
+        datePoint.textContent = year;
+        // Position date point relative to timeline width
+        const position = ((year - minDate.getFullYear()) / yearSpan) * 100;
+        datePoint.style.left = `${position}%`;
+        timelineElement.appendChild(datePoint);
+    }
+    
+    let currentYear = null;
+    let currentEra = null;
+    // Define eras
+    const eras = {
+        "Pahlavi Era": { start: 1300, end: 1357 },
+        "Islamic Republic": { start: 1357, end: 1404 }
+    };
+        function getEra(year) {
+        for (const [era, range] of Object.entries(eras)) {
+            if (year >= range.start && year <= range.end) {
+                return era;
+            }
+        }
+        return null;
+    }
+
     filteredData.forEach((item, index) => {
+        const [year] = item.date.split('-');
+        
+        // Add era indicator if it changes
+        const era = getEra(parseInt(year));
+        if (era !== currentEra) {
+            currentEra = era;
+            if (era) {
+                const eraMarker = document.createElement('div');
+                eraMarker.className = 'era-indicator';
+                eraMarker.textContent = era;
+                eraMarker.style.left = `${index * 330}px`; // Adjust based on item width
+                timelineElement.appendChild(eraMarker);
+            }
+        }
+
+        // Create timeline item
         const timelineItem = document.createElement('div');
         timelineItem.className = 'timeline-item';
-        let formattedDate = item.date; // fallback
+
+        let formattedDate = item.date;
         try {
             const [jy, jm, jd] = item.date.split('-').map(Number);
             const persianMonths = [
@@ -514,19 +710,28 @@
         }
 
         const itemType = item.category.toLowerCase() === 'death' ? 'death' : 'event';
+        const importanceClass = getImportanceClass(item.importance_score);
 
         timelineItem.innerHTML = `
-            <div class="timeline-content ${itemType}" dir="rtl" onclick="toggleExpand(this)">
+            <div class="timeline-content ${itemType} ${importanceClass}" dir="rtl" onclick="toggleExpand(this)">
                 <div class="timeline-date ${itemType}">${formattedDate}</div>
                 <div class="event-category ${itemType}">${item.category}</div>
                 <div class="event-title">${item.title}</div>
-                <div class="event-description">${item.description}</div>
+                <div class="event-description">${item.description || ''}</div>
                 ${item.link ? `<a href="${item.link}" class="event-link" target="_blank">مشاهده منبع</a>` : ''}
+                <div class="importance-indicator">${item.importance_score || 0}</div>
             </div>
         `;
 
         timelineElement.appendChild(timelineItem);
     });
+}
+function getImportanceClass(score) {
+    if (score > 10) return 'importance-very-high';
+    if (score > 5) return 'importance-high';
+    if (score < -5) return 'importance-very-low';
+    if (score < 0) return 'importance-low';
+    return '';
 }
 function toggleExpand(element) {
     // Remove expanded class from all other elements
