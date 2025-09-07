@@ -20,12 +20,68 @@ Deaths_df=pd.read_csv(script_dir+"/data/final_deaths_English.csv")
 
 
 #using BART to classify the categories of events
-from transformers import pipeline
+#from transformers import pipeline
 
-classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+#classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
 # Define candidate labels
 candidate_labels = ["Politics", "Social", "Natural Disaster", "Art", "Science","Iran","Sports"]
 
+# define persion keywords for labels
+Politics_keywords = ['انتخابات','تاجگذاری','انقلاب','سلسله','نبرد', 'دولت', 'ریاست جمهوری', 'پارلمان', 'مجلس', 'وزیر', 'سیاست', 'حزب', 'قانون', 'دیپلماسی', 'سفارت', 'تحریم', 'انقلاب', 'جنگ', 'صلح']
+Social_keywords = ['اعتراض', 'تظاهرات', 'حقوق بشر', 'آزادی', 'خشونت', 'تروریسم', 'پناهنده', 'مهاجرت', 'جمعیت', 'جمعیت‌شناسی', 'فرهنگ', 'آداب و رسوم', 'مذهب', 'جشنواره']
+Natural_Disaster_keywords = ['زلزله','زمین لرزه', 'سیل', 'طوفان', 'خشکسالی', 'آتش‌سوزی', 'سونامی', 'آتشفشان', 'توفان', 'برف‌وباران', 'گردباد', 'فاجعه طبیعی']     
+Art_keywords = ['فیلم', 'موسیقی', 'نقاشی', 'ادبیات', 'تئاتر', 'رقص', 'هنرهای تجسمی', 'فرهنگ عامه', 'کتاب', 'نمایشگاه', 'جشنواره فیلم', 'آلبوم موسیقی']
+Science_keywords = ['اختراع', 'کشف', 'فضا', 'تلسکوپ', 'زیست‌شناسی', 'فناوری', 'رباتیک', 'هوش مصنوعی', 'پزشکی', 'دارو', 'آزمایشگاه', 'دانشمند']
+Sports_keywords = ['المپیک', 'جام جهانی', 'فوتبال', 'بسکتبال', 'والیبال', 'تنیس', 'دوومیدانی', 'کشتی', 'بوکس', 'ورزشکار', 'مسابقه', 'قهرمانی']  
+
+# Function to check for keywords in details
+def check_keywords(details, keywords):
+    for keyword in keywords:
+        if re.search(r'\b' + re.escape(keyword) + r'\b', details):
+            return True
+    return False   
+
+#check keywords in title column and if found set the corresponding label to 1
+for i in range(len(Events_df)): 
+    print(f"Processing row {i+1} of {len(Events_df)}")
+    details = Events_df.loc[i, 'title']
+    if pd.isna(details):
+        continue
+    # Convert details to lowercase for case-insensitive matching
+    details_lower = details.lower()
+    
+    if check_keywords(details_lower, Politics_keywords):
+        Events_df.loc[i, 'Politics'] = 1.0
+    if check_keywords(details_lower, Social_keywords):
+        Events_df.loc[i, 'Social'] = 1.0
+    if check_keywords(details_lower, Natural_Disaster_keywords):
+        Events_df.loc[i, 'Natural Disaster'] = 1.0
+    if check_keywords(details_lower, Art_keywords):
+        Events_df.loc[i, 'Art'] = 1.0
+    if check_keywords(details_lower, Science_keywords):
+        Events_df.loc[i, 'Science'] = 1.0
+    if check_keywords(details_lower, Sports_keywords):
+        Events_df.loc[i, 'Sports'] = 1.0
+
+
+#check how many rows have at least one label assigned
+labeled_rows = Events_df[(Events_df['Politics'] == 1.0) |
+                         (Events_df['Social'] == 1.0) |
+                         (Events_df['Natural Disaster'] == 1.0) |
+                         (Events_df['Art'] == 1.0) |
+                         (Events_df['Science'] == 1.0) |
+                         (Events_df['Sports'] == 1.0)]
+print(f"Number of labeled rows after keyword matching: {len(labeled_rows)}")
+print(f"Total number of rows: {len(Events_df)}")
+print(f"Percentage of labeled rows: {len(labeled_rows)/len(Events_df)*100:.2f}%")
+
+
+#save the updated dataframe back to csv file
+Events_df.to_csv(script_dir+"/data/final_events_English_categorized_keywords.csv", index=False)
+
+
+
+'''
 #add labels columns to the dataframe
 for label in candidate_labels:
     Events_df[label] = 0.0
@@ -55,3 +111,4 @@ for i in range (len(Events_df)):
 
 # Save the updated dataframe back to csv file
 Events_df.to_csv(script_dir+"/data/final_events_English_categorized.csv", index=False)
+'''

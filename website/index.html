@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Interactive Timeline</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="hero-section">
+            <h1 class="hero-title">Iran Events Timeline</h1>
+            <p class="hero-subtitle">Navigate through time with zoom and pan controls</p>
+        </div>
+
+        <div class="container">
+            <div class="timeline-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="Event">Events</button>
+                    <button class="filter-btn" data-filter="milestone">Milestones</button>
+                    <button class="filter-btn" data-filter="achievement">Achievements</button>
+                </div>
+
+                <div class="instructions">
+                    <i class="fas fa-info-circle"></i> Drag to pan • Use zoom controls • Click events for details • Hover to interact
+                </div>
+
+                <div class="timeline-viewport" id="timelineViewport">
+                    <div class="zoom-controls">
+                        <button class="zoom-btn" id="zoomIn" title="Zoom In">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="zoom-btn" id="zoomOut" title="Zoom Out">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button class="reset-btn" id="resetView" title="Reset View">
+                            <i class="fas fa-home"></i>
+                        </button>
+                    </div>
+                    <div class="zoom-indicator" id="zoomIndicator">100%</div>
+
+                    <div class="timeline-canvas" id="timelineCanvas">
+                        <div class="timeline-line"></div>
+                        <!-- Timeline items will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Event Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalDate" class="text-muted mb-2"></div>
+                    <div id="modalDescription"></div>
+                    <div id="modalTags" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

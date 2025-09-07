@@ -1,0 +1,67 @@
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاریخ ایران - خط زمان</title>
+    <link href="assets/css/style_fa.css" rel="stylesheet">
+    <head>
+<body>
+    <div class="timeline-container">
+        <!-- Header -->
+        <div class="timeline-header">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="جستجوی رویدادها..." id="searchBox">
+            </div>
+            <h1 class="timeline-title">تاریخ ایران</h1>
+            <p class="timeline-subtitle">سفر در تاریخ ایران باستان</p>
+            <button onclick="switchLanguage()" class="language-switch">
+                EN | فا
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="timeline-main">
+            <!-- Content Panel -->
+            <div class="content-panel">
+                <div class="content-area">
+                    <div class="slide-content active" id="slideContent">
+                        <div class="slide-date persian-date" id="slideDate">۱۳۵۷</div>
+                        <h2 class="slide-title" id="slideTitle">انقلاب اسلامی</h2>
+                        <p class="slide-text" id="slideText">انقلاب ایران که در ایران به انقلاب اسلامی معروف است، مجموعه‌ای از رویدادها بود که به سرنگونی سلسله پهلوی و تأسیس جمهوری اسلامی منجر شد.</p>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="timeline-controls">
+                    <button class="control-btn" onclick="previousSlide()" title="قبلی">←</button>
+                    <button class="control-btn" onclick="nextSlide()" title="بعدی">→</button>
+                    <button class="control-btn" onclick="toggleAutoplay()" title="پخش خودکار" id="playBtn">⏸</button>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+
+            <!-- Media Panel -->
+            <div class="media-panel">
+                <div class="media-content">
+                    <img class="media-image active" id="mediaImage" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ایران تاریخی">
+                    <div class="media-overlay">
+                        <p id="mediaCaption">تهران، ۱۳۵۷ - جمعیت انقلابی در خیابان‌ها</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Navigation -->
+        <div class="timeline-nav">
+            <div class="timeline-track" id="timelineTrack">
+                <div class="timeline-line"></div>
+                <!-- Timeline points will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+<script src="assets/js/scripts_fa.js"></script>
+</body>
+</html>
