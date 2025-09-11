@@ -1,0 +1,24 @@
+{
+  "name": "iranian_events",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "serve website2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asghariali1/Iranian_Events.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asghariali1/Iranian_Events/issues"
+  },
+  "homepage": "https://github.com/asghariali1/Iranian_Events#readme",
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}

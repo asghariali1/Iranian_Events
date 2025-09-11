@@ -1,3 +1,172 @@
+.content-panel {
+    overflow: visible !important;
+    scrollbar-width: none; /* Firefox */
+}
+.content-panel::-webkit-scrollbar {
+    display: none !important;
+}
+.slide-content.active::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+.slide-content.active::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+    border-radius: 4px;
+}
+
+.slide-content.active::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.slide-content.active::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+}
+
+/* For Firefox */
+.slide-content.active {
+    scrollbar-width: thin;
+    scrollbar-color: #bdbdbd transparent;
+}
+.content-panel.era-sasanian,
+.content-panel.era-islamic-era,
+.content-panel.era-safavid,
+.content-panel.era-afsharian,
+.content-panel.era-zandian,
+.content-panel.era-qajar,
+.content-panel.era-pahlavi {
+    border-radius: 10px;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+.content-panel.era-islamic-republic {
+    border-radius: 10px;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    overflow: visible !important;
+}
+.content-panel.era-safavid {
+    width: 600px !important;
+    height: 400px !important;
+    max-width: 600px;
+    max-height: 400px;
+    min-width: 600px;
+    min-height: 400px;
+    overflow-y: auto !important;
+}
+
+.content-panel.era-safavid .slide-text {
+    font-size: 0.95rem !important;
+}
+/* Blue palette for periods */
+
+.content-panel.era-sasanian,
+.timeline-nav.era-sasanian {
+    background: #18325c !important;
+    border-color: #18325c !important;
+}
+
+.timeline-point.era-sasanian .timeline-dot {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    opacity: 0.5;
+}
+
+
+.content-panel.era-islamic-era,
+.timeline-nav.era-islamic-era {
+    background: #20406e !important;
+    border-color: #20406e !important;
+}
+
+.timeline-point.era-islamic-era .timeline-dot {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    opacity: 0.5;
+}
+
+
+.content-panel.era-safavid,
+.timeline-nav.era-safavid {
+    background: #274690 !important;
+    border-color: #274690 !important;
+}
+
+.timeline-point.era-safavid .timeline-dot {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    opacity: 0.5;
+}
+
+
+.content-panel.era-afsharian,
+.timeline-nav.era-afsharian {
+    background: #3057a0 !important;
+    border-color: #3057a0 !important;
+}
+
+.timeline-point.era-afsharian .timeline-dot {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    opacity: 0.5;
+}
+
+
+.content-panel.era-zandian,
+.timeline-nav.era-zandian {
+    background: #3a67b3 !important;
+    border-color: #3a67b3 !important;
+}
+
+.timeline-point.era-zandian .timeline-dot {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    opacity: 0.5;
+}
+
+
+.content-panel.era-qajar,
+.timeline-nav.era-qajar {
+    background: #4a7cc7 !important;
+    border-color: #4a7cc7 !important;
+}
+
+.timeline-point.era-qajar .timeline-dot {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    opacity: 0.5;
+}
+
+
+.content-panel.era-pahlavi,
+.timeline-nav.era-pahlavi {
+    background: #5b92db !important;
+    border-color: #5b92db !important;
+}
+
+.timeline-point.era-pahlavi .timeline-dot {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    opacity: 0.5;
+}
+
+
+.content-panel.era-islamic-republic,
+.timeline-nav.era-islamic-republic {
+    background: #6ba6f7 !important;
+    border-color: #6ba6f7 !important;
+}
+
+.timeline-point.era-islamic-republic .timeline-dot {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    opacity: 0.5;
+}
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +175,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #1a1a1a;
+    background: #0a1833;
     color: #fff;
     overflow: hidden;
 }
@@ -18,24 +187,33 @@ body {
 }
 
 /* Header */
+/* Header */
 .timeline-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0a1833 0%, #274690 100%);
     padding: 20px;
     text-align: center;
     position: relative;
     z-index: 100;
 }
 
+
 .timeline-title {
-    font-size: 2.5rem;
-    font-weight: 300;
+    font-size: 2.7rem;
+    font-weight: 800;
     margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 1.5px;
+    text-shadow: 0 4px 12px rgba(39,70,144,0.18), 0 2px 4px rgba(0,0,0,0.25);
+    font-family: 'Segoe UI', 'Arial Black', 'Segoe UI Bold', Arial, sans-serif;
 }
 
+
 .timeline-subtitle {
-    font-size: 1.1rem;
-    opacity: 0.9;
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.95;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(39,70,144,0.12);
+    font-family: 'Segoe UI', 'Arial Black', 'Segoe UI Bold', Arial, sans-serif;
 }
 
 /* Main Content Area */
@@ -48,9 +226,10 @@ body {
 }
 
 /* Content Panel */
+/* Content Panel */
 .content-panel {
     width: 60%;
-    background: #2a2a2a;
+    background: #142850;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -58,80 +237,21 @@ body {
     overflow-y: auto;
     max-height: calc(100vh - 320px);
 }
-/* More specific era backgrounds that should override */
-.timeline-container .timeline-main .content-panel.era-sasanian {
-    background: linear-gradient(135deg, #8B4513, #A0522D) !important;
-}
 
-.timeline-container .timeline-main .content-panel.era-islamic-era {
-    background: linear-gradient(135deg, #228B22, #32CD32) !important;
-}
-
-.timeline-container .timeline-main .content-panel.era-safavid {
-    background: linear-gradient(135deg, #4169E1, #6495ED) !important;
-}
-
-.timeline-container .timeline-main .content-panel.era-afsharian {
-    background: linear-gradient(135deg, #FF6347, #FF7F50) !important;
-}
-
-.timeline-container .timeline-main .content-panel.era-zandian {
-    background: linear-gradient(135deg, #9932CC, #BA55D3) !important;
-}
-
-.timeline-container .timeline-main .content-panel.era-qajar {
-    background: linear-gradient(135deg, #DC143C, #F08080) !important;
-}
-
-.timeline-container .timeline-main .content-panel.era-pahlavi {
-    background: linear-gradient(135deg, #FFD700, #FFA500) !important;
-}
-
-.timeline-container .timeline-main .content-panel.era-islamic-republic {
-    background: linear-gradient(135deg, #006400, #228B22) !important;
-}
-
-/* Era-specific backgrounds for content panel */
-.content-panel.era-sasanian {
-    background: linear-gradient(135deg, #8B4513, #A0522D) !important;
-}
-
-.content-panel.era-islamic-era {
-    background: linear-gradient(135deg, #228B22, #32CD32) !important;
-}
-
-.content-panel.era-safavid {
-    background: linear-gradient(135deg, #4169E1, #6495ED) !important;
-}
-
-.content-panel.era-afsharian {
-    background: linear-gradient(135deg, #FF6347, #FF7F50) !important;
-}
-
-.content-panel.era-zandian {
-    background: linear-gradient(135deg, #9932CC, #BA55D3) !important;
-}
-
-.content-panel.era-qajar {
-    background: linear-gradient(135deg, #DC143C, #F08080) !important;
-}
-
-.content-panel.era-pahlavi {
-    background: linear-gradient(135deg, #FFD700, #FFA500) !important;
-}
-
-.content-panel.era-islamic-republic {
-    background: linear-gradient(135deg, #006400, #228B22) !important;
-}
+/* Remove all era-specific backgrounds for content panel */
 
 .content-area {
     flex: 1;
     padding: 40px;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+}
+.content-area {
+    gap: 32px;
 }
 
 /* Slide content */
@@ -150,24 +270,26 @@ body {
 .slide-content.active {
     opacity: 1;
     transform: translateY(0);
+    overflow-y: auto;
+    height: 100%;
 }
 
 .slide-header {
     margin-bottom: 25px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 
-.slide-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    background: linear-gradient(45deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    .slide-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(10, 24, 51, 0.5);
 }
 
 .slide-meta {
@@ -178,28 +300,40 @@ body {
     justify-content: center;
 }
 
-.slide-date {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 500;
-    color: #667eea;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
+    .slide-date {
+        background: #274690;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 500;
+        color: #fff;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 
 .slide-era {
-    background: rgba(102, 126, 234, 0.3);
+    background: #ffffff17;
     padding: 5px 12px;
-    border-radius: 15px;
+    border-radius: 20px;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .slide-category {
-    background: rgba(118, 75, 162, 0.3);
+    background: #274690;
     padding: 5px 12px;
-    border-radius: 15px;
+    border-radius: 20px;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .slide-body {
@@ -208,15 +342,15 @@ body {
     gap: 25px;
 }
 
-.slide-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    text-align: justify;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid rgba(102, 126, 234, 0.8);
-    color: #ccc;
+    .slide-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        text-align: justify;
+        background: #1e335c;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #274690;
+        color: #fff;
 }
 
 .slide-media {
@@ -234,14 +368,13 @@ body {
 }
 
 .media-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.6s ease;
     opacity: 0;
-    transition: opacity 0.6s ease;
 }
 
 .media-image.active {
@@ -260,11 +393,19 @@ body {
 }
 
 /* Media Panel */
-.media-panel {
-    width: 40%;
-    background: #1a1a1a;
-    position: relative;
-    overflow: hidden;
+    .media-panel {
+        width: 400px;
+        height: 300px;
+        min-width: 400px;
+        min-height: 300px;
+        max-width: 400px;
+        max-height: 300px;
+        background: #0a1833;
+            max-width: none;
+            max-height: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
 
 .media-content {
@@ -276,71 +417,23 @@ body {
     position: relative;
 }
 
-.media-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    padding: 30px;
-    color: white;
-}
-
 /* Timeline Navigation */
-.timeline-nav {
-    height: 320px;
-    background: #333;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: visible;
-    z-index: 50;
-    transition: background 0.6s ease;
-    border-top: 3px solid #667eea;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    .timeline-nav {
+        height: 320px;
+        background: #142850;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: visible;
+        z-index: 50;
+        transition: background 0.6s ease;
+        border-top: 3px solid #274690;
+        box-shadow: 0 -4px 20px rgba(10, 24, 51, 0.3);
 }
 
-/* Timeline navigation era backgrounds */
-.timeline-nav.era-sasanian {
-    background: linear-gradient(180deg, #8B4513, #654321) !important;
-    border-top-color: #A0522D;
-}
 
-.timeline-nav.era-islamic-era {
-    background: linear-gradient(180deg, #228B22, #1B691B) !important;
-    border-top-color: #32CD32;
-}
-
-.timeline-nav.era-safavid {
-    background: linear-gradient(180deg, #4169E1, #2E4BC7) !important;
-    border-top-color: #6495ED;
-}
-
-.timeline-nav.era-afsharian {
-    background: linear-gradient(180deg, #FF6347, #E5472D) !important;
-    border-top-color: #FF7F50;
-}
-
-.timeline-nav.era-zandian {
-    background: linear-gradient(180deg, #9932CC, #7B28A3) !important;
-    border-top-color: #BA55D3;
-}
-
-.timeline-nav.era-qajar {
-    background: linear-gradient(180deg, #DC143C, #B21E35) !important;
-    border-top-color: #F08080;
-}
-
-.timeline-nav.era-pahlavi {
-    background: linear-gradient(180deg, #FFD700, #E6C200) !important;
-    border-top-color: #FFA500;
-}
-
-.timeline-nav.era-islamic-republic {
-    background: linear-gradient(180deg, #006400, #004B00) !important;
-    border-top-color: #228B22;
-}
+/* Remove all era-specific backgrounds for timeline nav */
 
 /* Timeline Track */
 #timelineTrack {
@@ -364,16 +457,16 @@ body {
 }
 
 /* Timeline Line */
-.timeline-line {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #333, #667eea, #764ba2, #333);
-    transform: translateY(-50%);
-    z-index: 1;
-    border-radius: 2px;
-    min-width: 100%;
+    .timeline-line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 4px;
+    background: linear-gradient(90deg, #fff, #f5f5f5, #eaeaea, #fff);
+        transform: translateY(-50%);
+        z-index: 1;
+        border-radius: 2px;
+        min-width: 100%;
 }
 
 /* Timeline Points */
@@ -394,93 +487,65 @@ body {
     transform: scale(1.15);
 }
 
-.timeline-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #555;
-    border: 4px solid #333;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff !important;
+            opacity: 1;
+            border: 4px solid #fff;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        .timeline-point.active .timeline-dot {
+            width: 30px;
+            height: 30px;
+            background: #fff !important;
+            opacity: 1;
+            border-color: #fff;
+            box-shadow: 0 0 25px rgba(39, 70, 144, 0.7);
+        }
 }
 
-.timeline-point.active .timeline-dot {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(45deg, #667eea, #764ba2);
-    border-color: #fff;
-    box-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
+    .timeline-point.active .timeline-dot {
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(45deg, #274690, #3e5ba9);
+        border-color: #fff;
+        box-shadow: 0 0 25px rgba(39, 70, 144, 0.7);
 }
 
-/* Era-specific timeline dots */
-.timeline-point.era-sasanian .timeline-dot {
-    background: #8B4513 !important;
-    border-color: #A0522D !important;
+
+/* Remove all era-specific timeline dots */
+
+    .timeline-year {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1rem;
+        color: #b0c4de;
+        font-weight: 500;
+        white-space: nowrap;
 }
 
-.timeline-point.era-islamic-era .timeline-dot {
-    background: #228B22 !important;
-    border-color: #32CD32 !important;
+    .timeline-point.active .timeline-year {
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.1rem;
 }
 
-.timeline-point.era-safavid .timeline-dot {
-    background: #4169E1 !important;
-    border-color: #6495ED !important;
-}
-
-.timeline-point.era-afsharian .timeline-dot {
-    background: #FF6347 !important;
-    border-color: #FF7F50 !important;
-}
-
-.timeline-point.era-zandian .timeline-dot {
-    background: #9932CC !important;
-    border-color: #BA55D3 !important;
-}
-
-.timeline-point.era-qajar .timeline-dot {
-    background: #DC143C !important;
-    border-color: #F08080 !important;
-}
-
-.timeline-point.era-pahlavi .timeline-dot {
-    background: #FFD700 !important;
-    border-color: #FFA500 !important;
-}
-
-.timeline-point.era-islamic-republic .timeline-dot {
-    background: #006400 !important;
-    border-color: #228B22 !important;
-}
-
-.timeline-year {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    color: #999;
-    font-weight: 500;
-    white-space: nowrap;
-}
-
-.timeline-point.active .timeline-year {
-    color: #667eea;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.timeline-month-day {
-    font-size: 0.75rem;
-    color: #888;
-    margin-top: 5px;
-    text-align: center;
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
+    .timeline-month-day {
+        font-size: 0.75rem;
+        color: #b0c4de;
+        margin-top: 5px;
+        text-align: center;
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
 }
 
 /* Timeline point backgrounds */
@@ -504,114 +569,8 @@ body {
     opacity: 0.2;
 }
 
-/* Era Brackets */
-.era-bracket {
-    position: absolute;
-    top: -80px;
-    height: 60px;
-    border-radius: 10px;
-    opacity: 0.4;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
 
-.era-bracket:hover {
-    opacity: 0.7;
-}
-
-.era-bracket-line {
-    position: absolute;
-    top: 45px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background-color: inherit;
-    border-radius: 2px;
-}
-
-.era-bracket-line::before,
-.era-bracket-line::after {
-    content: '';
-    position: absolute;
-    top: -8px;
-    width: 4px;
-    height: 20px;
-    background-color: inherit;
-    border-radius: 2px;
-}
-
-.era-bracket-line::before {
-    left: 0;
-}
-
-.era-bracket-line::after {
-    right: 0;
-}
-
-.era-bracket-label {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    font-weight: bold;
-    color: inherit;
-    white-space: nowrap;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.era-bracket-dates {
-    position: absolute;
-    top: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    color: inherit;
-    opacity: 0.9;
-    white-space: nowrap;
-}
-
-/* Era brackets with proper colors */
-.era-bracket.era-sasanian {
-    background-color: #8B0000;
-    color: white;
-}
-
-.era-bracket.era-islamic-era {
-    background-color: #62b362;
-    color: white;
-}
-
-.era-bracket.era-safavid {
-    background-color: #4169E1;
-    color: white;
-}
-
-.era-bracket.era-afsharian {
-    background-color: #FF8C00;
-    color: white;
-}
-
-.era-bracket.era-zandian {
-    background-color: #8A2BE2;
-    color: white;
-}
-
-.era-bracket.era-qajar {
-    background-color: #DC143C;
-    color: white;
-}
-
-.era-bracket.era-pahlavi {
-    background-color: #FFD700;
-    color: #000;
-}
-
-.era-bracket.era-islamic-republic {
-    background-color: #006400;
-    color: white;
-}
+/* Remove all era brackets and colors */
 
 /* Controls */
 .timeline-controls {
@@ -640,10 +599,10 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.control-btn:hover {
-    background: rgba(102, 126, 234, 0.8);
-    border-color: rgba(255,255,255,0.4);
-    transform: scale(1.1);
+    .control-btn:hover {
+        background: #274690;
+        border-color: #fff;
+        transform: scale(1.1);
 }
 
 /* Search Box */
@@ -666,9 +625,9 @@ body {
     transition: all 0.3s ease;
 }
 
-.search-box:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    .search-box:focus {
+        border-color: #274690;
+        box-shadow: 0 0 20px rgba(39, 70, 144, 0.3);
 }
 
 .search-box::placeholder {
@@ -685,13 +644,13 @@ body {
     border-radius: 6px;
 }
 
-#timelineTrack::-webkit-scrollbar-thumb {
-    background: rgba(102, 126, 234, 0.6);
-    border-radius: 6px;
+    #timelineTrack::-webkit-scrollbar-thumb {
+        background: #274690;
+        border-radius: 6px;
 }
 
-#timelineTrack::-webkit-scrollbar-thumb:hover {
-    background: rgba(102, 126, 234, 0.8);
+    #timelineTrack::-webkit-scrollbar-thumb:hover {
+        background: #3e5ba9;
 }
 
 /* Loading Animation */
@@ -703,13 +662,13 @@ body {
     display: none;
 }
 
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(102, 126, 234, 0.3);
-    border-radius: 50%;
-    border-top-color: #667eea;
-    animation: spin 1s ease-in-out infinite;
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #274690;
+        border-radius: 50%;
+        border-top-color: #3e5ba9;
+        animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -730,7 +689,7 @@ body {
     .content-panel {
         width: 100%;
         max-height: calc(100vh - 270px);
-        order: 1;
+            background: transparent !important;
     }
     
     .timeline-nav {
@@ -752,12 +711,15 @@ body {
     .timeline-dot {
         width: 16px;
         height: 16px;
-        border: 3px solid #333;
+        background: #fff !important;
+        opacity: 0.5;
     }
-    
     .timeline-point.active .timeline-dot {
         width: 24px;
         height: 24px;
+        background: #fff !important;
+        opacity: 1;
+    border-color: #fff;
     }
     
     .timeline-year {

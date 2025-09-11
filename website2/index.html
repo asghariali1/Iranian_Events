@@ -1,70 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iran History Timeline</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <div class="timeline-container">
-        <!-- Header -->
-        <div class="timeline-header">
-            <h1 class="timeline-title">Iran History Timeline</h1>
-            <p class="timeline-subtitle">Navigate through Persian history</p>
-        </div>
+      <!-- Header -->
+      <div class="timeline-header">
+        <h1 class="timeline-title">Iran History Timeline</h1>
+        <p class="timeline-subtitle">Navigate through Persian history</p>
+      </div>
 
-        <!-- Main Timeline Area -->
-        <div class="timeline-main">
-            <!-- Content Panel -->
-            <div class="content-panel">
-                <div class="content-area">
-                    <div class="slide-content" id="slideContent">
-                        <div class="slide-header">
-                            <div class="slide-meta">
-                                <div class="slide-date" id="slideDate">Date</div>
-                                <div class="slide-era" id="slideEra">Era</div>
-                                <div class="slide-category" id="slideCategory">Category</div>
-                            </div>
-                            <h2 class="slide-title" id="slideTitle">Event Title</h2>
-                        </div>
-                        
-                        <div class="slide-body">
-                            <div class="slide-text" id="slideText">
-                                Event description will appear here...
-                            </div>
-                            
-                            <div class="slide-media">
-                                <img id="mediaImage" class="media-image" alt="Event Image" style="display: none;">
-                                <div id="mediaCaption" class="media-caption" style="display: none;"></div>
-                            </div>
-                        </div>
-                    </div>
+      <!-- Main Timeline Area -->
+      <div class="timeline-main">
+        <div class="content-area">
+          <div class="content-panel">
+            <div class="slide-content" id="slideContent">
+              <div class="slide-header">
+                <div class="slide-meta">
+                  <div class="slide-date" id="slideDate">Date</div>
+                  <div class="slide-era" id="slideEra">Era</div>
+                  <div class="slide-category" id="slideCategory">Category</div>
                 </div>
+                <h2 class="slide-title" id="slideTitle">Event Title</h2>
+              </div>
+              <div class="slide-body">
+                <div class="slide-text" id="slideText">
+                  Event description will appear here...
+                </div>
+              </div>
             </div>
-        </div>
-
-        <!-- Timeline Navigation (Fixed at bottom) -->
-        <div class="timeline-nav">
-            <div id="timelineTrack">
-                <!-- Timeline content will be generated here -->
+          </div>
+          <div class="media-panel">
+            <div class="media-content">
+              <img
+                id="mediaImage"
+                class="media-image"
+                alt="Event Image"
+                style="display: none"
+              />
+              <div
+                id="mediaCaption"
+                class="media-caption"
+                style="display: none"
+              ></div>
             </div>
+            <!-- Controls -->
+            <div class="timeline-controls">
+              <button class="control-btn" onclick="previousSlide()">‹</button>
+              <button
+                class="control-btn"
+                onclick="toggleAutoplay()"
+                id="playBtn"
+              >
+                ⏸
+              </button>
+              <button class="control-btn" onclick="nextSlide()">›</button>
+              <button class="control-btn" onclick="switchLanguage()">
+                EN/FA
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Search Box -->
-        <div class="search-container">
-            <input type="text" id="searchBox" class="search-box" placeholder="Search events...">
+      <!-- Timeline Navigation (Fixed at bottom) -->
+      <div class="timeline-nav">
+        <div id="timelineTrack">
+          <!-- Timeline content will be generated here -->
         </div>
+      </div>
 
-        <!-- Controls -->
-        <div class="timeline-controls">
-            <button class="control-btn" onclick="previousSlide()">‹</button>
-            <button class="control-btn" onclick="toggleAutoplay()" id="playBtn">⏸</button>
-            <button class="control-btn" onclick="nextSlide()">›</button>
-            <button class="control-btn" onclick="switchLanguage()">EN/FA</button>
-        </div>
+      <!-- Search Box -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchBox"
+          class="search-box"
+          placeholder="Search events..."
+        />
+      </div>
     </div>
 
     <script src="assets/js/scripts.js"></script>
-</body>
+  </body>
 </html>
