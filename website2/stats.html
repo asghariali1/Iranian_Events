@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iranian History Statistics</title>
+    <link rel="stylesheet" href="assets/css/stats.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="stats-container">
+        <!-- Header -->
+        <header class="stats-header">
+            <div class="header-content">
+                <h1 class="stats-title">Iranian History Statistics</h1>
+                <p class="stats-subtitle">Data Analysis & Visualization Dashboard</p>
+                <nav class="stats-nav">
+                    <a href="index.html" class="nav-btn">← Back to Timeline</a>
+                    <a href="Fa.html" class="nav-btn">Persian Version</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Overview Cards -->
+        <section class="overview-section">
+            <div class="overview-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="totalEvents">0</h3>
+                        <p class="stat-label">Total Events</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏛️</div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="totalEras">0</h3>
+                        <p class="stat-label">Historical Eras</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚰️</div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="totalDeaths">0</h3>
+                        <p class="stat-label">Death Records</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="yearSpan">0</h3>
+                        <p class="stat-label">Years Covered</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Grid -->
+        <section class="charts-section">
+            <div class="charts-grid">
+                <!-- Era Distribution Pie Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Events by Era</h3>
+                        <p class="chart-subtitle">Distribution across historical periods</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="eraDistributionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Timeline Bar Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Timeline Overview</h3>
+                        <p class="chart-subtitle">Events per century</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Event Types Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Event Types</h3>
+                        <p class="chart-subtitle">Death vs. Other Events</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="eventTypesChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Era Timeline Chart -->
+                <div class="chart-container large">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Daily Event Frequency (1900-2025)</h3>
+                        <p class="chart-subtitle">Chronological view of Iranian dynasties</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="eraTimelineChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Monthly Distribution -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Seasonal Distribution</h3>
+                        <p class="chart-subtitle">Events by month</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Category Analysis -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Category Analysis</h3>
+                        <p class="chart-subtitle">Events by category type</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Statistics Tables -->
+        <section class="tables-section">
+            <div class="tables-grid">
+                <!-- Era Details Table -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">Era Statistics</h3>
+                        <p class="table-subtitle">Detailed breakdown by historical period</p>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="eraStatsTable" class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Era</th>
+                                    <th>Time Period</th>
+                                    <th>Total Events</th>
+                                    <th>Deaths</th>
+                                    <th>Other Events</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Top Events Table -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">Notable Events</h3>
+                        <p class="table-subtitle">Highlighted historical events</p>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="topEventsTable" class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Event</th>
+                                    <th>Era</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="stats-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Iranian History Timeline - Statistics Dashboard</p>
+                <p>Data visualization of Iranian historical events and personalities</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/stats.js"></script>
+</body>
+</html>

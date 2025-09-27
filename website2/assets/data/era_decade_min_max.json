@@ -1,0 +1,1840 @@
+{
+  "Sasanian": {
+    "620s": {
+      "min": {
+        "year": 622,
+        "date": "مرداد 08, -544",
+        "title": "بلاش یکم",
+        "title_english": "Vologases I of Parthia",
+        "type": "death",
+        "details": "شاهنشاه اشکانی.",
+        "details_english": "Parthian king.",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A8%D9%84%D8%A7%D8%B4_%DB%8C%DA%A9%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Vologases_I_of_Parthia"
+      },
+      "max": {
+        "year": 627,
+        "date": "آذر 20, 6",
+        "title": "نبرد نینوا",
+        "title_english": "Nineveh's battle",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "630s": {
+      "min": {
+        "year": 634,
+        "date": "اردیبهشت 23, 13",
+        "title": "نبرد ۶۳۴ بابل",
+        "title_english": "Battle; Babylon",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 636,
+        "date": "آبان 28, 15",
+        "title": "رستم فرخ‌هرمز",
+        "title_english": "Rostam Farrokhzad",
+        "type": "death",
+        "details": "اسپهبد آذربادگان و پارت در زمان شاهی یزدگرد سوم",
+        "details_english": "Azarbad and Parthian Spah in the time of Yazdgerd III",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B1%D8%B3%D8%AA%D9%85_%D9%81%D8%B1%D8%AE%E2%80%8C%D9%87%D8%B1%D9%85%D8%B2",
+        "link_english": "https://en.wikipedia.org/wiki/Rostam_Farrokhzad"
+      }
+    },
+    "640s": {
+      "min": {
+        "year": 642,
+        "date": "بهمن 25, 20",
+        "title": "نبرد نهاوند",
+        "title_english": "Battle of Nahavand",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D9%86%D9%87%D8%A7%D9%88%D9%86%D8%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Nahavand"
+      },
+      "max": {
+        "year": 642,
+        "date": "بهمن 25, 20",
+        "title": "نبرد نهاوند",
+        "title_english": "Battle of Nahavand",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D9%86%D9%87%D8%A7%D9%88%D9%86%D8%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Nahavand"
+      }
+    }
+  },
+  "Islamic Era": {
+    "670s": {
+      "min": {
+        "year": 674,
+        "date": "اسفند 06, 52",
+        "title": "حملهٔ ابرهه به کعبه",
+        "title_english": "Abrahama attack on the Kaaba",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 674,
+        "date": "اسفند 06, 52",
+        "title": "حملهٔ ابرهه به کعبه",
+        "title_english": "Abrahama attack on the Kaaba",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "680s": {
+      "min": {
+        "year": 680,
+        "date": "مهر 20, 59",
+        "title": "نبرد کربلا در روز عاشورا و کشته شدن حسین بن علی و یارانش به دست یزید بن معاویه",
+        "title_english": "Battle of Karbala",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%DA%A9%D8%B1%D8%A8%D9%84%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Karbala"
+      },
+      "max": {
+        "year": 680,
+        "date": "مهر 20, 59",
+        "title": "نبرد کربلا در روز عاشورا و کشته شدن حسین بن علی و یارانش به دست یزید بن معاویه",
+        "title_english": "Battle of Karbala",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%DA%A9%D8%B1%D8%A8%D9%84%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Karbala"
+      }
+    },
+    "740s": {
+      "min": {
+        "year": 745,
+        "date": "مرداد 09, 124",
+        "title": "ورود ابومسلم به خراسان و آغاز فرمانروایی او در این سرزمین.",
+        "title_english": "Abu Muslim's arrival in Khorasan and the beginning of his reign in this land.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 745,
+        "date": "مرداد 09, 124",
+        "title": "ورود ابومسلم به خراسان و آغاز فرمانروایی او در این سرزمین.",
+        "title_english": "Abu Muslim's arrival in Khorasan and the beginning of his reign in this land.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "840s": {
+      "min": {
+        "year": 841,
+        "date": "خرداد 10, 220",
+        "title": "اعدام بابک خرمدین",
+        "title_english": "Babak Khorramdin",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A8%D8%A7%D8%A8%DA%A9_%D8%AE%D8%B1%D9%85%D8%AF%DB%8C%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Babak_Khorramdin"
+      },
+      "max": {
+        "year": 845,
+        "date": "اردیبهشت 04, 224",
+        "title": "نبرد هرمزدگان بین ساسانیان و اشکانیان که منجر به پیروزی ساسانیان و کشته شدن اردوان پنجم شد",
+        "title_english": "Artabanus IV of Parthia",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B1%D8%AF%D9%88%D8%A7%D9%86_%DA%86%D9%87%D8%A7%D8%B1%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Artabanus_IV_of_Parthia"
+      }
+    },
+    "850s": {
+      "min": {
+        "year": 856,
+        "date": "دی 02, 235",
+        "title": "زمین‌لرزه دامغان",
+        "title_english": "Damghan earthquake",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 856,
+        "date": "دی 02, 235",
+        "title": "زمین‌لرزه دامغان",
+        "title_english": "Damghan earthquake",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "860s": {
+      "min": {
+        "year": 864,
+        "date": "آبان 14, 243",
+        "title": "بنیان نهادن سلسلهٔ علویان طبرستان توسط داعی کبیر در آمل.",
+        "title_english": "Hasan ibn Zayd",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AF%D8%A7%D8%B9%DB%8C_%DA%A9%D8%A8%DB%8C%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Hasan_ibn_Zayd"
+      },
+      "max": {
+        "year": 864,
+        "date": "آبان 14, 243",
+        "title": "بنیان نهادن سلسلهٔ علویان طبرستان توسط داعی کبیر در آمل.",
+        "title_english": "Hasan ibn Zayd",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AF%D8%A7%D8%B9%DB%8C_%DA%A9%D8%A8%DB%8C%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Hasan_ibn_Zayd"
+      }
+    },
+    "890s": {
+      "min": {
+        "year": 893,
+        "date": "فروردین 08, 272",
+        "title": "زمین‌لرزه اردبیل",
+        "title_english": "Ardebil earthquake",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 893,
+        "date": "فروردین 08, 272",
+        "title": "زمین‌لرزه اردبیل",
+        "title_english": "Ardebil earthquake",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "900s": {
+      "min": {
+        "year": 901,
+        "date": "مرداد 15, 280",
+        "title": "درگذشت عمرو لیث صفار برادر و جانشین یعقوب در زندان خلیفه عباسی بر اثر گرسنگی.",
+        "title_english": "The death of Amr Laith Saffar's brother and successor Jacob in Khalifa Abbas Prison in Hunger.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 901,
+        "date": "مرداد 15, 280",
+        "title": "درگذشت عمرو لیث صفار برادر و جانشین یعقوب در زندان خلیفه عباسی بر اثر گرسنگی.",
+        "title_english": "The death of Amr Laith Saffar's brother and successor Jacob in Khalifa Abbas Prison in Hunger.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "950s": {
+      "min": {
+        "year": 952,
+        "date": "دی 30, 330",
+        "title": "نبرد دربند پارس و دفاع سردار ایرانی آریوبرزن در برابر یورش اسکندر مقدونی.",
+        "title_english": "Alexander the Great",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%DA%A9%D9%86%D8%AF%D8%B1_%D9%85%D9%82%D8%AF%D9%88%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Alexander_the_Great"
+      },
+      "max": {
+        "year": 952,
+        "date": "دی 30, 330",
+        "title": "نبرد دربند پارس و دفاع سردار ایرانی آریوبرزن در برابر یورش اسکندر مقدونی.",
+        "title_english": "Alexander the Great",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%DA%A9%D9%86%D8%AF%D8%B1_%D9%85%D9%82%D8%AF%D9%88%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Alexander_the_Great"
+      }
+    },
+    "970s": {
+      "min": {
+        "year": 976,
+        "date": "آذر 04, 355",
+        "title": "شهر تاریخی بیشاپور، در منطقه کازرون، طی گذشت ۶ سال، تکمیل شد.",
+        "title_english": "The historic city of Bishapur, in the Kazerun area, was completed for five years.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 976,
+        "date": "آذر 04, 355",
+        "title": "شهر تاریخی بیشاپور، در منطقه کازرون، طی گذشت ۶ سال، تکمیل شد.",
+        "title_english": "The historic city of Bishapur, in the Kazerun area, was completed for five years.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "980s": {
+      "min": {
+        "year": 987,
+        "date": "مهر 23, 366",
+        "title": "آغاز به کار رصدخانه دیلمی ایران به مدیریت ابوسهل کوهی طبری",
+        "title_english": "The start of the Iranian Dilmi Observatory was managed by Abu Kuhi Kuhi Tabari",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 987,
+        "date": "مهر 23, 366",
+        "title": "آغاز به کار رصدخانه دیلمی ایران به مدیریت ابوسهل کوهی طبری",
+        "title_english": "The start of the Iranian Dilmi Observatory was managed by Abu Kuhi Kuhi Tabari",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1000s": {
+      "min": {
+        "year": 1002,
+        "date": "آذر 05, 381",
+        "title": "آخرین جنگ اردشیر بابکان، با رومیان، با پیروزی ایران، به پایان رسید.",
+        "title_english": "Ardashir I",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B1%D8%AF%D8%B4%DB%8C%D8%B1_%D8%A8%D8%A7%D8%A8%DA%A9%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Ardashir_I"
+      },
+      "max": {
+        "year": 1002,
+        "date": "آذر 05, 381",
+        "title": "آخرین جنگ اردشیر بابکان، با رومیان، با پیروزی ایران، به پایان رسید.",
+        "title_english": "Ardashir I",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B1%D8%AF%D8%B4%DB%8C%D8%B1_%D8%A8%D8%A7%D8%A8%DA%A9%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Ardashir_I"
+      }
+    },
+    "1020s": {
+      "min": {
+        "year": 1020,
+        "date": "مهر 26, 399",
+        "title": "احداث شهر «به اردشیر» در ایالت کرمان، به دستور اردشیر ساسانی",
+        "title_english": "Construction of Ardashir City in Kerman, Ardashir Sassanid",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B1%D8%AF%D8%B4%DB%8C%D8%B1_%D8%B3%D8%A7%D8%B3%D8%A7%D9%86%DB%8C",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1022,
+        "date": "اسفند 19, 400",
+        "title": "فردوسی چنان که در خود شاهنامه آمده در این روز سرایش شاهنامه را به پایان رساند",
+        "title_english": "Ferdowsi completed the Shahnameh as the Shahnameh himself",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1030s": {
+      "min": {
+        "year": 1030,
+        "date": "اردیبهشت 10, 409",
+        "title": "محمود غزنوی",
+        "title_english": "Mahmud of Ghazni",
+        "type": "death",
+        "details": "هفتمین شاه ایران از غزنویان",
+        "details_english": "7th King of Iran from Ghaznavian",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B3%D9%84%D8%B7%D8%A7%D9%86_%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%BA%D8%B2%D9%86%D9%88%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Mahmud_of_Ghazni"
+      },
+      "max": {
+        "year": 1037,
+        "date": "تیر 02, 416",
+        "title": "ابن‌سینا",
+        "title_english": "Avicenna",
+        "type": "death",
+        "details": "دانشمند، فیلسوف و پزشک",
+        "details_english": "Scientist, philosopher and physician",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%A8%D9%86_%D8%B3%DB%8C%D9%86%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Avicenna"
+      }
+    },
+    "1040s": {
+      "min": {
+        "year": 1040,
+        "date": "خرداد 02, 419",
+        "title": "نبرد دندانقان",
+        "title_english": "Battle of Dandanaqan",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D8%AF%D9%86%D8%AF%D8%A7%D9%86%D9%82%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Dandanaqan"
+      },
+      "max": {
+        "year": 1040,
+        "date": "خرداد 02, 419",
+        "title": "نبرد دندانقان",
+        "title_english": "Battle of Dandanaqan",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D8%AF%D9%86%D8%AF%D8%A7%D9%86%D9%82%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Dandanaqan"
+      }
+    },
+    "1050s": {
+      "min": {
+        "year": 1050,
+        "date": "دی 22, 428",
+        "title": "ابوسعید ابوالخیر",
+        "title_english": "<No English name found>",
+        "type": "death",
+        "details": "عارف و شاعر ایرانی",
+        "details_english": "Iranian mystic and poet",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%A8%D9%88%D8%B3%D8%B9%DB%8C%D8%AF_%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%AE%DB%8C%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Abu_Sa%27id_Abu%27l-Khayr"
+      },
+      "max": {
+        "year": 1050,
+        "date": "دی 22, 428",
+        "title": "ابوسعید ابوالخیر",
+        "title_english": "<No English name found>",
+        "type": "death",
+        "details": "عارف و شاعر ایرانی",
+        "details_english": "Iranian mystic and poet",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%A8%D9%88%D8%B3%D8%B9%DB%8C%D8%AF_%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%AE%DB%8C%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Abu_Sa%27id_Abu%27l-Khayr"
+      }
+    },
+    "1070s": {
+      "min": {
+        "year": 1071,
+        "date": "شهریور 04, 450",
+        "title": "نبرد ملازگرد",
+        "title_english": "Battle of Manzikert",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D9%85%D9%84%D8%A7%D8%B2%DA%AF%D8%B1%D8%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Manzikert"
+      },
+      "max": {
+        "year": 1071,
+        "date": "شهریور 04, 450",
+        "title": "نبرد ملازگرد",
+        "title_english": "Battle of Manzikert",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D9%85%D9%84%D8%A7%D8%B2%DA%AF%D8%B1%D8%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Manzikert"
+      }
+    },
+    "1130s": {
+      "min": {
+        "year": 1130,
+        "date": "اسفند 15, 508",
+        "title": "زمین‌لرزه جبال",
+        "title_english": "Jabal earthquake",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 1130,
+        "date": "اسفند 15, 508",
+        "title": "زمین‌لرزه جبال",
+        "title_english": "Jabal earthquake",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1140s": {
+      "min": {
+        "year": 1143,
+        "date": "مهر 16, 522",
+        "title": "تاج‌گذاری داریوش بزرگ",
+        "title_english": "Darius the Great Crown",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 1146,
+        "date": "آبان 26, 525",
+        "title": "آغاز ساختمان مسجد گوهرشاد در مشهد به دستور گوهرشاد",
+        "title_english": "Goharshad Mosque",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%DA%AF%D9%88%D9%87%D8%B1%D8%B4%D8%A7%D8%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Goharshad_Mosque"
+      }
+    },
+    "1160s": {
+      "min": {
+        "year": 1160,
+        "date": "مرداد 08, 539",
+        "title": "بازسازی بندر صور در فنیقیه با هزینه ایران به دستور کوروش بزرگ و تبدیل شدن این شهر به یکی از پایگاه های دریایی ایران در مدیترانه به مدت ۲ قرن.",
+        "title_english": "Cyrus the Great",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%DA%A9%D9%88%D8%B1%D9%88%D8%B4_%D8%A8%D8%B2%D8%B1%DA%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Cyrus_the_Great"
+      },
+      "max": {
+        "year": 1160,
+        "date": "آبان 07, 539",
+        "title": "ورود کوروش بزرگ به دولت شهر بابل و آزاد کردن یهودیان",
+        "title_english": "Cyrus the Great entry into the Babylonian government and release the Jews",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1170s": {
+      "min": {
+        "year": 1173,
+        "date": "اسفند 18, 551",
+        "title": "ساخت تالار جدیدی در کاخ سفید (تیسفون) که به نام طاق کسری شهرت یافت، به پایان رسید",
+        "title_english": "Taq Kasra",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B7%D8%A7%D9%82_%DA%A9%D8%B3%D8%B1%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Taq_Kasra"
+      },
+      "max": {
+        "year": 1173,
+        "date": "اسفند 18, 551",
+        "title": "ساخت تالار جدیدی در کاخ سفید (تیسفون) که به نام طاق کسری شهرت یافت، به پایان رسید",
+        "title_english": "Taq Kasra",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B7%D8%A7%D9%82_%DA%A9%D8%B3%D8%B1%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Taq_Kasra"
+      }
+    },
+    "1180s": {
+      "min": {
+        "year": 1180,
+        "date": "مهر 22, 559",
+        "title": "تاج‌گذاری کوروش بزرگ",
+        "title_english": "Cyrus the Great",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%DA%A9%D9%88%D8%B1%D9%88%D8%B4_%D8%A8%D8%B2%D8%B1%DA%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Cyrus_the_Great"
+      },
+      "max": {
+        "year": 1180,
+        "date": "مهر 22, 559",
+        "title": "تاج‌گذاری کوروش بزرگ",
+        "title_english": "Cyrus the Great",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%DA%A9%D9%88%D8%B1%D9%88%D8%B4_%D8%A8%D8%B2%D8%B1%DA%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Cyrus_the_Great"
+      }
+    },
+    "1190s": {
+      "min": {
+        "year": 1194,
+        "date": "اسفند 28, 572",
+        "title": "طغرل سوم",
+        "title_english": "Tughril III",
+        "type": "death",
+        "details": "هفدهمین سلطان سلجوقیان ایران",
+        "details_english": "17th Sultanate of Iran",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B7%D8%BA%D8%B1%D9%84_%D8%B3%D9%88%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Tughril_III"
+      },
+      "max": {
+        "year": 1194,
+        "date": "اسفند 28, 572",
+        "title": "طغرل سوم",
+        "title_english": "Tughril III",
+        "type": "death",
+        "details": "هفدهمین سلطان سلجوقیان ایران",
+        "details_english": "17th Sultanate of Iran",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B7%D8%BA%D8%B1%D9%84_%D8%B3%D9%88%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Tughril_III"
+      }
+    },
+    "1220s": {
+      "min": {
+        "year": 1220,
+        "date": "خرداد 03, 599",
+        "title": "سپاه جبه نویان به دروازه های نیشابور رسید",
+        "title_english": "Jebe",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AC%D8%A8%D9%87_%D9%86%D9%88%DB%8C%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Jebe"
+      },
+      "max": {
+        "year": 1220,
+        "date": "خرداد 03, 599",
+        "title": "سپاه جبه نویان به دروازه های نیشابور رسید",
+        "title_english": "Jebe",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AC%D8%A8%D9%87_%D9%86%D9%88%DB%8C%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Jebe"
+      }
+    },
+    "1250s": {
+      "min": {
+        "year": 1258,
+        "date": "اردیبهشت 01, 637",
+        "title": "آغاز نگارش گلستان سعدی",
+        "title_english": "Gulistan (book)",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%DA%AF%D9%84%D8%B3%D8%AA%D8%A7%D9%86_%D8%B3%D8%B9%D8%AF%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Gulistan_(book)"
+      },
+      "max": {
+        "year": 1259,
+        "date": "اردیبهشت 16, 638",
+        "title": "آغاز ساخت رصدخانه مراغه (سه شنبه۴ جمادی‌الاول ۶۵۷ قمری) که بعنوان روز مراغه نام دارد. این روز با هدف شناساندن فرهنگ و تمدن و مکتب مراغه، با تصویب شورای فرهنگی عمومی به مناسبت آغاز احداث رصدخانه تاریخی در این شهر روز مراغه نام گذاری شده‌است.",
+        "title_english": "Maragheh observatory",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B1%D8%B5%D8%AF%D8%AE%D8%A7%D9%86%D9%87_%D9%85%D8%B1%D8%A7%D8%BA%D9%87",
+        "link_english": "https://en.wikipedia.org/wiki/Maragheh_observatory"
+      }
+    },
+    "1280s": {
+      "min": {
+        "year": 1284,
+        "date": "آبان 02, 663",
+        "title": "کشته شدن خواجه شمس‌الدین جوینی، (صاحبدیوان)، ادیب، شاعر و وزیر ارغون‌خان (چهارمین ایلخانان)",
+        "title_english": "Shams al-Din Juvayni",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D9%85%D8%B3%E2%80%8C%D8%A7%D9%84%D8%AF%DB%8C%D9%86_%D9%85%D8%AD%D9%85%D8%AF_%D8%AC%D9%88%DB%8C%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Shams_al-Din_Juvayni"
+      },
+      "max": {
+        "year": 1284,
+        "date": "آبان 02, 663",
+        "title": "شمس‌الدین جوینی",
+        "title_english": "Shams al-Din Juvayni",
+        "type": "death",
+        "details": "از شعراء، نویسندگان و وزراء بنام ایرانی که در رودخانه اهر کشته شد",
+        "details_english": "From poets, writers and ministers in the name of an Iranian killed in the Ahar River",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D9%85%D8%B3%E2%80%8C%D8%A7%D9%84%D8%AF%DB%8C%D9%86_%D9%85%D8%AD%D9%85%D8%AF_%D8%AC%D9%88%DB%8C%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Shams_al-Din_Juvayni"
+      }
+    },
+    "1330s": {
+      "min": {
+        "year": 1338,
+        "date": "تیر 18, 717",
+        "title": "عبدالرزاق باشتینی",
+        "title_english": "Abdul Razaq Bashti",
+        "type": "death",
+        "details": "اولین حاکم سربداران در ایران",
+        "details_english": "The first ruler of the leaders in Iran",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%B2%D8%A7%D9%82_%D8%A8%D8%A7%D8%B4%D8%AA%DB%8C%D9%86%DB%8C",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1338,
+        "date": "تیر 18, 717",
+        "title": "عبدالرزاق باشتینی",
+        "title_english": "Abdul Razaq Bashti",
+        "type": "death",
+        "details": "اولین حاکم سربداران در ایران",
+        "details_english": "The first ruler of the leaders in Iran",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%B2%D8%A7%D9%82_%D8%A8%D8%A7%D8%B4%D8%AA%DB%8C%D9%86%DB%8C",
+        "link_english": "<No English page found>"
+      }
+    },
+    "1340s": {
+      "min": {
+        "year": 1345,
+        "date": "فروردین 04, 724",
+        "title": "امین‌الدین بلیانی",
+        "title_english": "Amin al-Din Balyani",
+        "type": "death",
+        "details": "شاعر، صوفی و شیخ‌الاسلام فارس در دورهٔ حکومت آل اینجو",
+        "details_english": "Poet, Sufi and Sheikh al -Islam Fars during the reign of Al -Injo",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%DB%8C%D9%86%E2%80%8C%D8%A7%D9%84%D8%AF%DB%8C%D9%86_%D8%A8%D9%84%DB%8C%D8%A7%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Amin_al-Din_Balyani"
+      },
+      "max": {
+        "year": 1345,
+        "date": "فروردین 04, 724",
+        "title": "امین‌الدین بلیانی",
+        "title_english": "Amin al-Din Balyani",
+        "type": "death",
+        "details": "شاعر، صوفی و شیخ‌الاسلام فارس در دورهٔ حکومت آل اینجو",
+        "details_english": "Poet, Sufi and Sheikh al -Islam Fars during the reign of Al -Injo",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%DB%8C%D9%86%E2%80%8C%D8%A7%D9%84%D8%AF%DB%8C%D9%86_%D8%A8%D9%84%DB%8C%D8%A7%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Amin_al-Din_Balyani"
+      }
+    },
+    "1440s": {
+      "min": {
+        "year": 1449,
+        "date": "آبان 05, 828",
+        "title": "الغ‌بیگ",
+        "title_english": "Ulugh Beg",
+        "type": "death",
+        "details": "پنجمین پادشاه ایران از امپراتوری تیموری",
+        "details_english": "Fifth King of Iran from Timurid Empire",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%84%D8%BA%E2%80%8C%D8%A8%DB%8C%DA%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Ulugh_Beg"
+      },
+      "max": {
+        "year": 1449,
+        "date": "آبان 05, 828",
+        "title": "الغ‌بیگ",
+        "title_english": "Ulugh Beg",
+        "type": "death",
+        "details": "پنجمین پادشاه ایران از امپراتوری تیموری",
+        "details_english": "Fifth King of Iran from Timurid Empire",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%84%D8%BA%E2%80%8C%D8%A8%DB%8C%DA%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Ulugh_Beg"
+      }
+    },
+    "1490s": {
+      "min": {
+        "year": 1492,
+        "date": "آبان 27, 871",
+        "title": "جامی",
+        "title_english": "Jami",
+        "type": "death",
+        "details": "شاعر",
+        "details_english": "poet",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Jami"
+      },
+      "max": {
+        "year": 1492,
+        "date": "آبان 27, 871",
+        "title": "جامی",
+        "title_english": "Jami",
+        "type": "death",
+        "details": "شاعر",
+        "details_english": "poet",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Jami"
+      }
+    },
+    "1500s": {
+      "min": {
+        "year": 1501,
+        "date": "آذر 30, 880",
+        "title": "تاج‌گذاری شاه اسماعیل یکم",
+        "title_english": "Ismail I",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A7%D9%87_%D8%A7%D8%B3%D9%85%D8%A7%D8%B9%DB%8C%D9%84_%DB%8C%DA%A9%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Ismail_I"
+      },
+      "max": {
+        "year": 1501,
+        "date": "آذر 30, 880",
+        "title": "تاج‌گذاری شاه اسماعیل یکم",
+        "title_english": "Ismail I",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A7%D9%87_%D8%A7%D8%B3%D9%85%D8%A7%D8%B9%DB%8C%D9%84_%DB%8C%DA%A9%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Ismail_I"
+      }
+    }
+  },
+  "Safavid": {
+    "1510s": {
+      "min": {
+        "year": 1510,
+        "date": "آذر 16, 889",
+        "title": "نبرد مرو میان صفویان با همراهی بابر گورکانی در برابر شیبانیان",
+        "title_english": "Battle of Merv",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D9%85%D8%B1%D9%88",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Merv"
+      },
+      "max": {
+        "year": 1515,
+        "date": "مهر 22, 894",
+        "title": "تصرف جزیره‌های راهبردی دریای پارس توسط نیروی دریایی پرتغال به فرماندهی آلفونس دالبوکرکی",
+        "title_english": "Persian Gulf",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AE%D9%84%DB%8C%D8%AC_%D9%81%D8%A7%D8%B1%D8%B3",
+        "link_english": "https://en.wikipedia.org/wiki/Persian_Gulf"
+      }
+    },
+    "1520s": {
+      "min": {
+        "year": 1524,
+        "date": "خرداد 02, 903",
+        "title": "شاه اسماعیل یکم",
+        "title_english": "Ismail I",
+        "type": "death",
+        "details": "نخستین شاه ایران از دودمان صفوی",
+        "details_english": "The first king of Iran from the Safavid dynasty",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A7%D9%87_%D8%A7%D8%B3%D9%85%D8%A7%D8%B9%DB%8C%D9%84_%DB%8C%DA%A9%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Ismail_I"
+      },
+      "max": {
+        "year": 1529,
+        "date": "شهریور 30, 908",
+        "title": "عقب‌نشینی ارتش عثمانی از وین، نیروی عثمانی به سبب بدی هوا و شیوع بیماری میان سربازانش از محاصره وین دست کشید. این محاصره ۹ سال طول کشید. (۲۱ سپتامبر ۱۵۲۹)",
+        "title_english": "September 21",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%DB%B2%DB%B1_%D8%B3%D9%BE%D8%AA%D8%A7%D9%85%D8%A8%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/September_21"
+      }
+    },
+    "1580s": {
+      "min": {
+        "year": 1582,
+        "date": "مهر 06, 961",
+        "title": "وحشی بافقی",
+        "title_english": "Vahshi Bafqi",
+        "type": "death",
+        "details": "شاعر سده دهم",
+        "details_english": "The tenth century poet",
+        "link": "https://fa.wikipedia.org/wiki/%D9%88%D8%AD%D8%B4%DB%8C_%D8%A8%D8%A7%D9%81%D9%82%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Vahshi_Bafqi"
+      },
+      "max": {
+        "year": 1585,
+        "date": "مهر 30, 964",
+        "title": "اعزام شدن حمزه میرزای صفوی، با لشکریان محلی اصفهان، فارس، یزد و کرمان، به سمت مرزهای شمالی، برای جنگ با عثمانی",
+        "title_english": "Hamza Mirza",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AD%D9%85%D8%B2%D9%87_%D9%85%DB%8C%D8%B1%D8%B2%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Hamza_Mirza"
+      }
+    },
+    "1590s": {
+      "min": {
+        "year": 1590,
+        "date": "اردیبهشت 31, 969",
+        "title": "منعقد شدن عهدنامه فرهاد پاشا در میان دودمان صفوی با امپراتوری عثمانی",
+        "title_english": "Treaty of Constantinople (1590)",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D9%87%D8%AF%D9%86%D8%A7%D9%85%D9%87_%D9%81%D8%B1%D9%87%D8%A7%D8%AF_%D9%BE%D8%A7%D8%B4%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Treaty_of_Constantinople_(1590)"
+      },
+      "max": {
+        "year": 1598,
+        "date": "آبان 21, 977",
+        "title": "انتخاب اصفهان به عنوان پایتخت ایران توسط شاه عباس یکم صفوی",
+        "title_english": "Abbas the Great",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A7%D9%87_%D8%B9%D8%A8%D8%A7%D8%B3_%D8%A8%D8%B2%D8%B1%DA%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Abbas_the_Great"
+      }
+    },
+    "1610s": {
+      "min": {
+        "year": 1612,
+        "date": "آبان 30, 991",
+        "title": "منعقد شدن عهدنامه نصوح پاشا میان امپراتوری صفوی و امپراتوری عثمانی",
+        "title_english": "Treaty of Nasuh Pasha",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D9%87%D8%AF%D9%86%D8%A7%D9%85%D9%87_%D9%86%D8%B5%D9%88%D8%AD_%D9%BE%D8%A7%D8%B4%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Treaty_of_Nasuh_Pasha"
+      },
+      "max": {
+        "year": 1618,
+        "date": "مهر 04, 997",
+        "title": "بین ایران و امپراتوری عثمانی عهدنامه سراب امضا شد",
+        "title_english": "Ottoman Empire",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%DB%8C_%D8%B9%D8%AB%D9%85%D8%A7%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Ottoman_Empire"
+      }
+    },
+    "1620s": {
+      "min": {
+        "year": 1622,
+        "date": "اردیبهشت 10, 1001",
+        "title": "بازپس‌گیری هرمز",
+        "title_english": "Anglo-Persian capture of Hormuz",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B2%D9%BE%D8%B3%E2%80%8C%DA%AF%DB%8C%D8%B1%DB%8C_%D9%87%D8%B1%D9%85%D8%B2",
+        "link_english": "https://en.wikipedia.org/wiki/Anglo-Persian_capture_of_Hormuz"
+      },
+      "max": {
+        "year": 1623,
+        "date": "بهمن 05, 1001",
+        "title": "فتح بغداد طی نبرد شاه عباس بزرگ با امپراتوری عثمانی",
+        "title_english": "Conquest of Baghdad during the battle of King Abbas the Great with the Ottoman Empire",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1630s": {
+      "min": {
+        "year": 1639,
+        "date": "اردیبهشت 27, 1018",
+        "title": "بین ایران و امپراتوری عثمانی عهدنامه زهاب امضا شد",
+        "title_english": "Ottoman Empire",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%DB%8C_%D8%B9%D8%AB%D9%85%D8%A7%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Ottoman_Empire"
+      },
+      "max": {
+        "year": 1639,
+        "date": "اردیبهشت 27, 1018",
+        "title": "بین ایران و امپراتوری عثمانی عهدنامه زهاب امضا شد",
+        "title_english": "Ottoman Empire",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%DB%8C_%D8%B9%D8%AB%D9%85%D8%A7%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Ottoman_Empire"
+      }
+    },
+    "1660s": {
+      "min": {
+        "year": 1667,
+        "date": "آذر 04, 1046",
+        "title": "شهر شماخی، واقع در شمال منطقه قفقاز، به وسیله یک زلزله شدید ویران شد و ۸۰ هزار نفر در این شهر را به کام مرگ فرستاد.",
+        "title_english": "The city of you, north of the Caucasus area, was destroyed by a severe earthquake and sent 6,000 people to death.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 1667,
+        "date": "آذر 04, 1046",
+        "title": "شهر شماخی، واقع در شمال منطقه قفقاز، به وسیله یک زلزله شدید ویران شد و ۸۰ هزار نفر در این شهر را به کام مرگ فرستاد.",
+        "title_english": "The city of you, north of the Caucasus area, was destroyed by a severe earthquake and sent 6,000 people to death.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1690s": {
+      "min": {
+        "year": 1691,
+        "date": "آبان 02, 1070",
+        "title": "به رسمیت شناختن حاکمیت هخامنشیان بر قبرس، در زمان اردشیر یکم (پسر خشایارشا)، با امضای قراردادی میان دولت ایران و رئیس هیئت اعزامی یونان در شوش، عهدنامه کالیاس.",
+        "title_english": "Recognizing the Achaemenid rule over Cyprus, during the reign of Ardashir I (son of Xerxes), signed a contract between the Iranian government and the head of the Greek expedition in Susa, the Calias treaty.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B1%D8%AF%D8%B4%DB%8C%D8%B1_%DB%8C%DA%A9%D9%85",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1694,
+        "date": "مرداد 08, 1073",
+        "title": "شاه سلیمان یکم",
+        "title_english": "Suleiman I of Persia",
+        "type": "death",
+        "details": "هشتمین شاه ایران در زمان دودمان صفوی.",
+        "details_english": "The eighth king of Iran during the Safavid dynasty.",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A7%D9%87_%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86_%DB%8C%DA%A9%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Suleiman_I_of_Persia"
+      }
+    },
+    "1700s": {
+      "min": {
+        "year": 1702,
+        "date": "مهر 04, 1081",
+        "title": "نبرد سالامیس میان شاهنشاهی هخامنشی و دولت شهر های یونان در ۴ و ۵ مهر",
+        "title_english": "Achaemenid Empire",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A7%D9%87%D9%86%D8%B4%D8%A7%D9%87%DB%8C_%D9%87%D8%AE%D8%A7%D9%85%D9%86%D8%B4%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Achaemenid_Empire"
+      },
+      "max": {
+        "year": 1702,
+        "date": "مهر 04, 1081",
+        "title": "نبرد سالامیس میان شاهنشاهی هخامنشی و دولت شهر های یونان در ۴ و ۵ مهر",
+        "title_english": "Achaemenid Empire",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A7%D9%87%D9%86%D8%B4%D8%A7%D9%87%DB%8C_%D9%87%D8%AE%D8%A7%D9%85%D9%86%D8%B4%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Achaemenid_Empire"
+      }
+    },
+    "1720s": {
+      "min": {
+        "year": 1722,
+        "date": "اسفند 17, 1100",
+        "title": "نبرد گلون‌آباد",
+        "title_english": "Battle of Gulnabad",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%DA%AF%D9%84%D9%88%D9%86%E2%80%8C%D8%A2%D8%A8%D8%A7%D8%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Gulnabad"
+      },
+      "max": {
+        "year": 1729,
+        "date": "آبان 21, 1108",
+        "title": "نبرد مورچه خورت",
+        "title_english": "Battle of Murche-Khort",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D9%85%D9%88%D8%B1%DA%86%D9%87%E2%80%8C%D8%AE%D9%88%D8%B1%D8%AA",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Murche-Khort"
+      }
+    },
+    "1730s": {
+      "min": {
+        "year": 1732,
+        "date": "دی 20, 1110",
+        "title": "بسته شدن عهدنامه احمد پاشا بین دودمان صفوی از ایران و امپراتوری عثمانی",
+        "title_english": "Treaty of Ahmet Pasha",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D9%87%D8%AF%D9%86%D8%A7%D9%85%D9%87_%D8%A7%D8%AD%D9%85%D8%AF_%D9%BE%D8%A7%D8%B4%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Treaty_of_Ahmet_Pasha"
+      },
+      "max": {
+        "year": 1736,
+        "date": "مهر 03, 1115",
+        "title": "بین ایران و امپراتوری عثمانی معاهده استانبول (۱۷۳۶) امضا شد",
+        "title_english": "Ottoman Empire",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%DB%8C_%D8%B9%D8%AB%D9%85%D8%A7%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Ottoman_Empire"
+      }
+    }
+  },
+  "Afsharian": {
+    "1730s": {
+      "min": {
+        "year": 1738,
+        "date": "آذر 05, 1117",
+        "title": "نبرد تنگه خیبر",
+        "title_english": "Battle of Khyber Pass (1738)",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D8%AA%D9%86%DA%AF%D9%87_%D8%AE%DB%8C%D8%A8%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Khyber_Pass_(1738)"
+      },
+      "max": {
+        "year": 1739,
+        "date": "اسفند 05, 1117",
+        "title": "نبرد کرنال",
+        "title_english": "Battle of Karnal",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%DA%A9%D8%B1%D9%86%D8%A7%D9%84",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Karnal"
+      }
+    },
+    "1760s": {
+      "min": {
+        "year": 1769,
+        "date": "فروردین 05, 1148",
+        "title": "میر مهنا",
+        "title_english": "Mir Mahna",
+        "type": "death",
+        "details": "از حاکمان ایران در زمان زندیان",
+        "details_english": "From the Iranian rulers in the time of Zandian",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1_%D9%85%D9%87%D9%86%D8%A7",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1769,
+        "date": "فروردین 05, 1148",
+        "title": "میر مهنا",
+        "title_english": "Mir Mahna",
+        "type": "death",
+        "details": "از حاکمان ایران در زمان زندیان",
+        "details_english": "From the Iranian rulers in the time of Zandian",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1_%D9%85%D9%87%D9%86%D8%A7",
+        "link_english": "<No English page found>"
+      }
+    },
+    "1770s": {
+      "min": {
+        "year": 1778,
+        "date": "آذر 24, 1157",
+        "title": "زمین‌لرزه کاشان",
+        "title_english": "Kashan earthquake",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 1779,
+        "date": "اسفند 11, 1157",
+        "title": "کریم‌خان زند",
+        "title_english": "Karim Khan Zand",
+        "type": "death",
+        "details": "نخستین پادشاه ایران از زندیان",
+        "details_english": "The first king of Iran from Zandian",
+        "link": "https://fa.wikipedia.org/wiki/%DA%A9%D8%B1%DB%8C%D9%85%E2%80%8C%D8%AE%D8%A7%D9%86_%D8%B2%D9%86%D8%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Karim_Khan_Zand"
+      }
+    },
+    "1780s": {
+      "min": {
+        "year": 1781,
+        "date": "مهر 23, 1160",
+        "title": "آزادی اسیران بنی اسرائیل در بابل به فرمان کوروش بزرگ، پس از تسخیر این شهر",
+        "title_english": "Israelites",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A8%D9%86%DB%8C%E2%80%8C%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84",
+        "link_english": "https://en.wikipedia.org/wiki/Israelites"
+      },
+      "max": {
+        "year": 1789,
+        "date": "تیر 16, 1168",
+        "title": "آغاز نبرد سپاه لطفعلی‌خان زند با سپاه آقامحمدخان قاجار در منطقه چمن هزار بیضا",
+        "title_english": "Lotf Ali Khan",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%84%D8%B7%D9%81%D8%B9%D9%84%DB%8C%E2%80%8C%D8%AE%D8%A7%D9%86_%D8%B2%D9%86%D8%AF",
+        "link_english": "https://en.wikipedia.org/wiki/Lotf_Ali_Khan"
+      }
+    },
+    "1790s": {
+      "min": {
+        "year": 1791,
+        "date": "تیر 10, 1170",
+        "title": "محمدباقر وحید بهبهانی",
+        "title_english": "Muhammad Baqir Behbahani",
+        "type": "death",
+        "details": "فقیه و مجتهد شیعه",
+        "details_english": "Shiite jurist",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%A8%D8%A7%D9%82%D8%B1_%D9%88%D8%AD%DB%8C%D8%AF_%D8%A8%D9%87%D8%A8%D9%87%D8%A7%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Muhammad_Baqir_Behbahani"
+      },
+      "max": {
+        "year": 1795,
+        "date": "شهریور 20, 1174",
+        "title": "پایان نبرد کرتسانیسی",
+        "title_english": "Battle of Krtsanisi",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%DA%A9%D8%B1%D8%AA%D8%B3%D8%A7%D9%86%DB%8C%D8%B3%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Krtsanisi"
+      }
+    }
+  },
+  "Qajar": {
+    "1790s": {
+      "min": {
+        "year": 1797,
+        "date": "خرداد 28, 1176",
+        "title": "قتل آقامحمدخان قاجار",
+        "title_english": "Agha Mohammad Khan Qajar",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A2%D9%82%D8%A7%D9%85%D8%AD%D9%85%D8%AF%D8%AE%D8%A7%D9%86_%D9%82%D8%A7%D8%AC%D8%A7%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Agha_Mohammad_Khan_Qajar"
+      },
+      "max": {
+        "year": 1797,
+        "date": "خرداد 28, 1176",
+        "title": "آقامحمدخان قاجار",
+        "title_english": "Agha Mohammad Khan Qajar",
+        "type": "death",
+        "details": "نخستین پادشاه ایران از قاجاریان به قتل رسید",
+        "details_english": "The first king of Iran from the Qajaris was murdered",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A2%D9%82%D8%A7%D9%85%D8%AD%D9%85%D8%AF%D8%AE%D8%A7%D9%86_%D9%82%D8%A7%D8%AC%D8%A7%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Agha_Mohammad_Khan_Qajar"
+      }
+    },
+    "1800s": {
+      "min": {
+        "year": 1804,
+        "date": "تیر 01, 1183",
+        "title": "آغاز جنگ ایران و روسیه (۱۸۱۳–۱۸۰۴)",
+        "title_english": "<No English name found>",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AC%D9%86%DA%AF_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86_%D9%88_%D8%B1%D9%88%D8%B3%DB%8C%D9%87_(%DB%B1%DB%B8%DB%B1%DB%B3%E2%80%93%DB%B1%DB%B8%DB%B0%DB%B4)",
+        "link_english": "https://en.wikipedia.org/wiki/Russo-Persian_War_(1804%E2%80%931813)"
+      },
+      "max": {
+        "year": 1809,
+        "date": "اسفند 21, 1187",
+        "title": "انعقاد عهدنامه مجمل در میان حکومت دودمان قاجار ایران با حکومت انگلستان",
+        "title_english": "The conclusion of the Qajar dynasty with the British government",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D9%87%D8%AF%D9%86%D8%A7%D9%85%D9%87_%D9%85%D8%AC%D9%85%D9%84",
+        "link_english": "<No English page found>"
+      }
+    },
+    "1810s": {
+      "min": {
+        "year": 1812,
+        "date": "آبان 09, 1191",
+        "title": "نبرد اصلاندوز",
+        "title_english": "Battle of Aslanduz",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D8%A7%D8%B5%D9%84%D8%A7%D9%86%D8%AF%D9%88%D8%B2",
+        "link_english": "https://en.wikipedia.org/wiki/Battle_of_Aslanduz"
+      },
+      "max": {
+        "year": 1813,
+        "date": "آبان 02, 1192",
+        "title": "انعقاد عهدنامه گلستان، میان ایران دوره قاجاریان و روسیه تزاری، برابر با ۲۴ اکتبر ۱۸۱۳ (میلادی)",
+        "title_english": "Tsardom of Russia",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B1%D9%88%D8%B3%DB%8C%D9%87_%D8%AA%D8%B2%D8%A7%D8%B1%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Tsardom_of_Russia"
+      }
+    },
+    "1820s": {
+      "min": {
+        "year": 1823,
+        "date": "مرداد 06, 1202",
+        "title": "امضا شدن نخستین عهدنامه از عهدنامه‌های ارزروم در میان حکومت دودمان قاجار از ایران با امپراتوری عثمانی",
+        "title_english": "Treaties of Erzurum",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D9%87%D8%AF%D9%86%D8%A7%D9%85%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%A7%D8%B1%D8%B2%D8%B1%D9%88%D9%85",
+        "link_english": "https://en.wikipedia.org/wiki/Treaties_of_Erzurum"
+      },
+      "max": {
+        "year": 1829,
+        "date": "بهمن 22, 1207",
+        "title": "حمله به سفارت روسیه در تهران و قتل الکساندر گریبایدوف سفیر روسیه",
+        "title_english": "Alexander Griboyedov",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%84%DA%A9%D8%B3%D8%A7%D9%86%D8%AF%D8%B1_%DA%AF%D8%B1%DB%8C%D8%A8%D8%A7%DB%8C%D8%AF%D9%88%D9%81",
+        "link_english": "https://en.wikipedia.org/wiki/Alexander_Griboyedov"
+      }
+    },
+    "1830s": {
+      "min": {
+        "year": 1834,
+        "date": "آبان 02, 1213",
+        "title": "فتحعلی‌شاه",
+        "title_english": "Fath-Ali Shah Qajar",
+        "type": "death",
+        "details": "دومین شاه ایران از دودمان قاجار",
+        "details_english": "The second king of Iran from the Qajar dynasty",
+        "link": "https://fa.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD%D8%B9%D9%84%DB%8C%E2%80%8C%D8%B4%D8%A7%D9%87",
+        "link_english": "https://en.wikipedia.org/wiki/Fath-Ali_Shah_Qajar"
+      },
+      "max": {
+        "year": 1837,
+        "date": "اردیبهشت 11, 1216",
+        "title": "انتشار کاغذ اخبار نخستین نشریه فارسی‌زبان در تهران",
+        "title_english": "Kaghaz-e Akhbar",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D8%BA%D8%B0_%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Kaghaz-e_Akhbar"
+      }
+    },
+    "1840s": {
+      "min": {
+        "year": 1844,
+        "date": "فروردین 02, 1223",
+        "title": "محمدباقر شفتی",
+        "title_english": "Mohammad Bagher Shafti",
+        "type": "death",
+        "details": "روحانی و فقیه",
+        "details_english": "Rouhani and the jurisprudent",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%A8%D8%A7%D9%82%D8%B1_%D8%B4%D9%81%D8%AA%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Mohammad_Bagher_Shafti"
+      },
+      "max": {
+        "year": 1848,
+        "date": "مهر 28, 1227",
+        "title": "آغاز صدراعظمی امیرکبیر به فرمان ناصرالدین شاه",
+        "title_english": "Naser al-Din Shah Qajar",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%D8%A7%D8%B5%D8%B1%D8%A7%D9%84%D8%AF%DB%8C%D9%86%E2%80%8C%D8%B4%D8%A7%D9%87",
+        "link_english": "https://en.wikipedia.org/wiki/Naser_al-Din_Shah_Qajar"
+      }
+    },
+    "1850s": {
+      "min": {
+        "year": 1850,
+        "date": "خرداد 06, 1229",
+        "title": "آغاز شورش بابیان نی‌ریز",
+        "title_english": "Beginning of the Babian Niriz rebellion",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D9%88%D8%B1%D8%B4_%D8%A8%D8%A7%D8%A8%DB%8C%D8%A7%D9%86_%D9%86%DB%8C%E2%80%8C%D8%B1%DB%8C%D8%B2",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1857,
+        "date": "اسفند 13, 1235",
+        "title": "بین ایران و انگلستان معاهده پاریس بسته شد",
+        "title_english": "Treaty of Paris (1857)",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%D8%B9%D8%A7%D9%87%D8%AF%D9%87_%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3_(%DB%B1%DB%B8%DB%B5%DB%B7)",
+        "link_english": "https://en.wikipedia.org/wiki/Treaty_of_Paris_(1857)"
+      }
+    },
+    "1860s": {
+      "min": {
+        "year": 1861,
+        "date": "آبان 02, 1240",
+        "title": "اولین خط تلگراف قاره‌پیما، در ایالات متحده آمریکا، با ارسال پیام «به پایان رسید.» تکمیل شد.",
+        "title_english": "United States",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D8%A7%D9%84%D8%A7%D8%AA_%D9%85%D8%AA%D8%AD%D8%AF%D9%87_%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/United_States"
+      },
+      "max": {
+        "year": 1865,
+        "date": "اسفند 28, 1243",
+        "title": "میرزا آقاخان نوری",
+        "title_english": "Mirza Aqa Khan Nuri",
+        "type": "death",
+        "details": "دومین صدراعظم ناصرالدین‌شاه",
+        "details_english": "The second Chancellor of Nasser al -Din Shah",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1%D8%B2%D8%A7_%D8%A2%D9%82%D8%A7%D8%AE%D8%A7%D9%86_%D9%86%D9%88%D8%B1%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Mirza_Aqa_Khan_Nuri"
+      }
+    },
+    "1870s": {
+      "min": {
+        "year": 1871,
+        "date": "تیر 08, 1250",
+        "title": "رضاقلی‌خان هدایت",
+        "title_english": "Reza-Qoli Khan Hedayat",
+        "type": "death",
+        "details": "ادیب، شاعر و تذکره‌نویس",
+        "details_english": "Adib, poet and notewriter",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B1%D8%B6%D8%A7%D9%82%D9%84%DB%8C%E2%80%8C%D8%AE%D8%A7%D9%86_%D9%87%D8%AF%D8%A7%DB%8C%D8%AA",
+        "link_english": "https://en.wikipedia.org/wiki/Reza-Qoli_Khan_Hedayat"
+      },
+      "max": {
+        "year": 1874,
+        "date": "بهمن 14, 1252",
+        "title": "انتشار شمس‌النهار، نخستین روزنامه در افغانستان و در سلطنت شیرعلی خان.(۱۵ ذی‌الحجه ۱۲۹۰ق).[۱]",
+        "title_english": "Sher Ali Khan",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%DB%8C%D8%B1%D8%B9%D9%84%DB%8C_%D8%AE%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Sher_Ali_Khan"
+      }
+    },
+    "1880s": {
+      "min": {
+        "year": 1880,
+        "date": "فروردین 10, 1259",
+        "title": "محمدتقی سپهر",
+        "title_english": "Mohammad Taqi Sepehr",
+        "type": "death",
+        "details": "شاعر",
+        "details_english": "poet",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%AA%D9%82%DB%8C_%D8%B3%D9%BE%D9%87%D8%B1",
+        "link_english": "https://en.wikipedia.org/wiki/Mohammad_Taqi_Sepehr"
+      },
+      "max": {
+        "year": 1889,
+        "date": "فروردین 24, 1268",
+        "title": "آغاز سومین سفر ناصرالدین‌شاه به اروپا",
+        "title_english": "The beginning of Nasser al -Din Shah's third trip to Europe",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1890s": {
+      "min": {
+        "year": 1890,
+        "date": "اسفند 29, 1268",
+        "title": "امضا شدن قرارداد رژی",
+        "title_english": "Signature of the Regi contract",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%82%D8%B1%D8%A7%D8%B1%D8%AF%D8%A7%D8%AF_%D8%B1%DA%98%DB%8C",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1898,
+        "date": "مهر 26, 1277",
+        "title": "انتشار روزنامه تندرو مساوات، به مدیریت سید محمدرضا شیرازی، در تهران",
+        "title_english": "The publication of the hard -line Equal newspaper, managed by Seyyed Mohammad Reza Shirazi, in Tehran",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1900s": {
+      "min": {
+        "year": 1900,
+        "date": "آذر 21, 1279",
+        "title": "ورود اولین اتومبیل به ایران در زمان مظفرالدین شاه قاجار",
+        "title_english": "Mozaffar ad-Din Shah Qajar",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%D8%B8%D9%81%D8%B1%D8%A7%D9%84%D8%AF%DB%8C%D9%86%E2%80%8C%D8%B4%D8%A7%D9%87",
+        "link_english": "https://en.wikipedia.org/wiki/Mozaffar_ad-Din_Shah_Qajar"
+      },
+      "max": {
+        "year": 1909,
+        "date": "آذر 01, 1288",
+        "title": "انتخاب عضدالملک به‌عنوان نایب‌السلطنه احمدشاه در زمان دوره دوم مجلس شورای ملی",
+        "title_english": "Selection of Azad al -Mulk as Ahmad Shah's Vice -President during the Second term of the National Assembly",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      }
+    },
+    "1910s": {
+      "min": {
+        "year": 1910,
+        "date": "اسفند 28, 1288",
+        "title": "منصوب شدن شکرالله قوام‌الدوله به‌عنوان نخشت‌وزیر تجارت ایران",
+        "title_english": "The appointment of Shakrallah Qavam al -Dawlah as the Iranian Trade Minister",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%DA%A9%D8%B1%D8%A7%D9%84%D9%84%D9%87_%D9%82%D9%88%D8%A7%D9%85%E2%80%8C%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%87",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1919,
+        "date": "آبان 02, 1298",
+        "title": "قطع کمک‌های غیرنقدی، ایالات متحده آمریکا به ایران، در پی امضای قرارداد ۱۹۱۹، میان ایران و انگلستان",
+        "title_english": "United States",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D8%A7%D9%84%D8%A7%D8%AA_%D9%85%D8%AA%D8%AD%D8%AF%D9%87_%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/United_States"
+      }
+    },
+    "1920s": {
+      "min": {
+        "year": 1920,
+        "date": "فروردین 01, 1299",
+        "title": "کلنل فضل‌الله خان",
+        "title_english": "Colonel Fazlullah Khan",
+        "type": "death",
+        "details": "از افسران ژاندارمری ایران در زمان دودمان قاجار",
+        "details_english": "From Iranian gendarmerie officers at the time of Qajar dynasty",
+        "link": "https://fa.wikipedia.org/wiki/%DA%A9%D9%84%D9%86%D9%84_%D9%81%D8%B6%D9%84%E2%80%8C%D8%A7%D9%84%D9%84%D9%87_%D8%AE%D8%A7%D9%86",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1925,
+        "date": "آذر 24, 1304",
+        "title": "آغاز پادشاهی رضاشاه",
+        "title_english": "The beginning of the kingdom of Reza Shah",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%D8%AF%D8%B4%D8%A7%D9%87%DB%8C_%D8%B1%D8%B6%D8%A7%D8%B4%D8%A7%D9%87",
+        "link_english": "<No English page found>"
+      }
+    }
+  },
+  "Pahlavi": {
+    "1920s": {
+      "min": {
+        "year": 1926,
+        "date": "اسفند 22, 1304",
+        "title": "ایرج میرزا",
+        "title_english": "Iraj Mirza",
+        "type": "death",
+        "details": "شاعر ایرانی (زاده ۱۲۵۱)",
+        "details_english": "Iranian poet (born 2)",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D8%B1%D8%AC_%D9%85%DB%8C%D8%B1%D8%B2%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Iraj_Mirza"
+      },
+      "max": {
+        "year": 1929,
+        "date": "مهر 24, 1308",
+        "title": "پایه‌گذاری کشور تاجیکستان در اتحاد جمهوری‌های شوروی با عنوان جمهوری شوروی سوسیالیستی تاجیکستان (۱۶ اکتبر ۱۹۲۹م). پیش از این اتفاق، تاجیکستان بخشی خودمختار در جمهوری ازبکستان بود.",
+        "title_english": "Tajik Soviet Socialist Republic",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AC%D9%85%D9%87%D9%88%D8%B1%DB%8C_%D8%B4%D9%88%D8%B1%D9%88%DB%8C_%D8%B3%D9%88%D8%B3%DB%8C%D8%A7%D9%84%DB%8C%D8%B3%D8%AA%DB%8C_%D8%AA%D8%A7%D8%AC%DB%8C%DA%A9%D8%B3%D8%AA%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Tajik_Soviet_Socialist_Republic"
+      }
+    },
+    "1930s": {
+      "min": {
+        "year": 1930,
+        "date": "اسفند 09, 1308",
+        "title": "احمدشاه",
+        "title_english": "Ahmad Shah Qajar",
+        "type": "death",
+        "details": "هفتمین شاه ایران از دودمان قاجار",
+        "details_english": "The 7th King of Iran from the Qajar dynasty",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%AD%D9%85%D8%AF%D8%B4%D8%A7%D9%87",
+        "link_english": "https://en.wikipedia.org/wiki/Ahmad_Shah_Qajar"
+      },
+      "max": {
+        "year": 1939,
+        "date": "آبان 30, 1318",
+        "title": "عبدالحسین میرزا فرمانفرما",
+        "title_english": "Abdol-Hossein Farman Farma",
+        "type": "death",
+        "details": "سیاستمدار ایرانی در دوره قاجار",
+        "details_english": "Iranian politician in the Qajar period",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%AD%D8%B3%DB%8C%D9%86_%D9%85%DB%8C%D8%B1%D8%B2%D8%A7_%D9%81%D8%B1%D9%85%D8%A7%D9%86%D9%81%D8%B1%D9%85%D8%A7",
+        "link_english": "https://en.wikipedia.org/wiki/Abdol-Hossein_Farman_Farma"
+      }
+    },
+    "1940s": {
+      "min": {
+        "year": 1940,
+        "date": "بهمن 14, 1318",
+        "title": "تقی ارانی",
+        "title_english": "Taqi Arani",
+        "type": "death",
+        "details": "فعال سیاسی کمونیست در ایران",
+        "details_english": "Communist political activist in Iran",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AA%D9%82%DB%8C_%D8%A7%D8%B1%D8%A7%D9%86%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Taqi_Arani"
+      },
+      "max": {
+        "year": 1949,
+        "date": "آبان 21, 1328",
+        "title": "بنیان‌گذاری جبهه ملی ایران",
+        "title_english": "National Front (Iran)",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AC%D8%A8%D9%87%D9%87_%D9%85%D9%84%DB%8C_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/National_Front_(Iran)"
+      }
+    },
+    "1950s": {
+      "min": {
+        "year": 1950,
+        "date": "اردیبهشت 17, 1329",
+        "title": "بازگرداندن پیکر بی‌جان رضاشاه به ایران",
+        "title_english": "Restore to Reza Shah's lifeless body to Iran",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "",
+        "link_english": ""
+      },
+      "max": {
+        "year": 1959,
+        "date": "مهر 27, 1338",
+        "title": "ابراهیم حکیمی",
+        "title_english": "Ebrahim Hakimi",
+        "type": "death",
+        "details": "سیاستمدار و نخست‌وزیر دورهٔ محمدرضاشاه پهلوی",
+        "details_english": "Politician and Prime Minister of Mohammad Reza Shah Pahlavi",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%A8%D8%B1%D8%A7%D9%87%DB%8C%D9%85_%D8%AD%DA%A9%DB%8C%D9%85%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Ebrahim_Hakimi"
+      }
+    },
+    "1960s": {
+      "min": {
+        "year": 1960,
+        "date": "دی 13, 1338",
+        "title": "نیما یوشیج",
+        "title_english": "Nima Yooshij",
+        "type": "death",
+        "details": "شاعر",
+        "details_english": "poet",
+        "link": "https://fa.wikipedia.org/wiki/%D9%86%DB%8C%D9%85%D8%A7_%DB%8C%D9%88%D8%B4%DB%8C%D8%AC",
+        "link_english": "https://en.wikipedia.org/wiki/Nima_Yooshij"
+      },
+      "max": {
+        "year": 1969,
+        "date": "دی 01, 1348",
+        "title": "ثبت تپه اسکندری و تپه‌های اطراف آن با شماره ملی ۸۸۶ به عنوان یکی از آثار ملی ایران",
+        "title_english": "Registration of Eskandari Hill and its surrounding hills with national number 1 as one of Iran's national monuments",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AA%D9%BE%D9%87_%D8%A7%D8%B3%DA%A9%D9%86%D8%AF%D8%B1%DB%8C_%D9%88_%D8%AA%D9%BE%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%A7%D8%B7%D8%B1%D8%A7%D9%81_%D8%A2%D9%86",
+        "link_english": "<No English page found>"
+      }
+    },
+    "1970s": {
+      "min": {
+        "year": 1970,
+        "date": "دی 11, 1348",
+        "title": "تصویب قانون حمایت حقوق مؤلفان و مصنفان و هنرمندان در مجلس شورای ملی",
+        "title_english": "Adoption of the Law on the Protection of the Rights of the Authors and the Artists and Artists in the National Assembly",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%AD%D9%85%D8%A7%DB%8C%D8%AA_%D8%AD%D9%82%D9%88%D9%82_%D9%85%D8%A4%D9%84%D9%81%D8%A7%D9%86_%D9%88_%D9%85%D8%B5%D9%86%D9%81%D8%A7%D9%86_%D9%88_%D9%87%D9%86%D8%B1%D9%85%D9%86%D8%AF%D8%A7%D9%86",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1979,
+        "date": "دی 10, 1358",
+        "title": "جواد بدیع زاده",
+        "title_english": "Javad Badizadeh",
+        "type": "death",
+        "details": "خواننده، موسیقیدان و نواساز (زاده ۱۲۸۱)",
+        "details_english": "Singer, musician and novas (born 2)",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AC%D9%88%D8%A7%D8%AF_%D8%A8%D8%AF%DB%8C%D8%B9%E2%80%8C%D8%B2%D8%A7%D8%AF%D9%87",
+        "link_english": "<No English page found>"
+      }
+    }
+  },
+  "Islamic Republic": {
+    "1980s": {
+      "min": {
+        "year": 1980,
+        "date": "دی 21, 1358",
+        "title": "تبریز - درگیری میان طرفداران آیت‌الله شریعتمداری و برخی مردم تبریز",
+        "title_english": "Mohammad Kazem Shariatmadari",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B3%DB%8C%D8%AF_%D9%85%D8%AD%D9%85%D8%AF%DA%A9%D8%A7%D8%B8%D9%85_%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%D9%85%D8%AF%D8%A7%D8%B1%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Mohammad_Kazem_Shariatmadari"
+      },
+      "max": {
+        "year": 1989,
+        "date": "آذر 28, 1368",
+        "title": "عباس یمینی‌شریف",
+        "title_english": "Abbas Yemeni Sharif",
+        "type": "death",
+        "details": "نویسنده و مترجم (زادهٔ ۱۲۹۸)",
+        "details_english": "Author and Translator (born 1)",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D8%A8%D8%A7%D8%B3_%DB%8C%D9%85%DB%8C%D9%86%DB%8C_%D8%B4%D8%B1%DB%8C%D9%81",
+        "link_english": "<No English page found>"
+      }
+    },
+    "1990s": {
+      "min": {
+        "year": 1990,
+        "date": "دی 22, 1368",
+        "title": "صدیقه پهلوی",
+        "title_english": "Sadiqah Pahlavi",
+        "type": "death",
+        "details": "نخستین فرزند رضاشاه (زادهٔ ۱۲۹۵)",
+        "details_english": "The first child of Reza Shah (born 1)",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B5%D8%AF%DB%8C%D9%82%D9%87_%D9%BE%D9%87%D9%84%D9%88%DB%8C",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 1999,
+        "date": "دی 00, 1378",
+        "title": "انتشار آلبوم نغمه های شرقی، شادمهر عقیلی.",
+        "title_english": "Release of Eastern Naghma Album, Shadmehr Aghili.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A7%D8%AF%D9%85%D9%87%D8%B1_%D8%B9%D9%82%DB%8C%D9%84%DB%8C",
+        "link_english": "<No English page found>"
+      }
+    },
+    "2000s": {
+      "min": {
+        "year": 2000,
+        "date": "دی 15, 1378",
+        "title": "ملوک ضرابی",
+        "title_english": "Moluk Zarabi",
+        "type": "death",
+        "details": "خواننده موسیقی سنتی ایران (زاده ۱۲۸۶)",
+        "details_english": "Iranian traditional music singer (born 2)",
+        "link": "https://fa.wikipedia.org/wiki/%D9%85%D9%84%D9%88%DA%A9_%D8%B6%D8%B1%D8%A7%D8%A8%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Moluk_Zarabi"
+      },
+      "max": {
+        "year": 2009,
+        "date": "دی 09, 1388",
+        "title": "خسرو فرشیدورد",
+        "title_english": "Khosro Farshidord",
+        "type": "death",
+        "details": "زبان‌شناس ایرانی (زاده ۱۳۰۸)",
+        "details_english": "Iranian linguist (born 2)",
+        "link": "https://fa.wikipedia.org/wiki/%D8%AE%D8%B3%D8%B1%D9%88_%D9%81%D8%B1%D8%B4%DB%8C%D8%AF%D9%88%D8%B1%D8%AF",
+        "link_english": "<No English page found>"
+      }
+    },
+    "2010s": {
+      "min": {
+        "year": 2010,
+        "date": "دی 11, 1388",
+        "title": "علی گلزاده غفوری",
+        "title_english": "Ali Golzadeh Ghafouri",
+        "type": "death",
+        "details": "سیاستمدار، حقوقدان و مجتهد ایرانی (زاده ۱۳۰۲)",
+        "details_english": "Iranian politician, lawyer and mujtahid (born 1)",
+        "link": "https://fa.wikipedia.org/wiki/%D8%B9%D9%84%DB%8C_%DA%AF%D9%84%D8%B2%D8%A7%D8%AF%D9%87_%D8%BA%D9%81%D9%88%D8%B1%DB%8C",
+        "link_english": "https://en.wikipedia.org/wiki/Ali_Golzadeh_Ghafouri"
+      },
+      "max": {
+        "year": 2019,
+        "date": "دی 06, 1398",
+        "title": "امیرحسین زارع‌زاده",
+        "title_english": "Amir Hossein Zarezadeh",
+        "type": "death",
+        "details": "از کشته‌شدگان اعتراضات آبان ۱۳۹۸ ایران.",
+        "details_english": "One of the dead protests in Iran.",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%DB%8C%D8%B1%D8%AD%D8%B3%DB%8C%D9%86_%D8%B2%D8%A7%D8%B1%D8%B9%E2%80%8C%D8%B2%D8%A7%D8%AF%D9%87",
+        "link_english": "<No English page found>"
+      }
+    },
+    "2020s": {
+      "min": {
+        "year": 2020,
+        "date": "دی 11, 1398",
+        "title": "اجرای مراسم حکم قصاص آرمان عبدالعالی عامل جنایت قتل غزاله شکور و توقف اجرای حکم در پی مهلت دادن اولیای دم   [۱]",
+        "title_english": "The execution of the Recovery Ceremony Arman Abdula'ali, the perpetrator of the murder of Ghazaleh Shakour and the suspension of the execution of the sentence following the deadline for the tail.",
+        "type": "event",
+        "details": "",
+        "details_english": "",
+        "link": "https://fa.wikipedia.org/wiki/%D9%82%D8%AA%D9%84_%D8%BA%D8%B2%D8%A7%D9%84%D9%87_%D8%B4%DA%A9%D9%88%D8%B1",
+        "link_english": "<No English page found>"
+      },
+      "max": {
+        "year": 2025,
+        "date": "شهریور 07, 1404",
+        "title": "احمد پژمان",
+        "title_english": "Ahmad Pejman",
+        "type": "death",
+        "details": "آهنگساز و موسیقی‌دان",
+        "details_english": "Composer and musician",
+        "link": "https://fa.wikipedia.org/wiki/%D8%A7%D8%AD%D9%85%D8%AF_%D9%BE%DA%98%D9%85%D8%A7%D9%86",
+        "link_english": "https://en.wikipedia.org/wiki/Ahmad_Pejman"
+      }
+    }
+  }
+}
