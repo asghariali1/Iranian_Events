@@ -111,6 +111,39 @@ print(f"Merged dataframe has {len(merged_df)} rows.")
 #replace all nan values with empty string
 merged_df = merged_df.fillna('')   
 
+#drop all observation with year_gregorian less than 600
+merged_df = merged_df[merged_df['year_gregorian'] >= 600]
+
+#remove all observation with year_gregorian bigger than 2025
+merged_df = merged_df[merged_df['year_gregorian'] <= 2025]
+
+#add a single observation with year_gregorian 2026, month_gregorian 1, day_gregorian 1, date_gregorian January 01, 2026, year 1405, month 1, day 1, date  فروردین 01, 1405, era_persian جمهوری اسلامی, era_english Islamic Republic, type event, title New Era Event, title_english New Era Event, details This is a placeholder event for the new era., details_english This is a placeholder event for the new era., link '', link_english '', keywords '', keywords_english ''
+year	2026
+month	"1"
+day	"1"
+title	"ناشناس"
+links	""
+year_gregorian	2026
+month_gregorian	"01"
+day_gregorian	"01"
+link	""
+link_english	""
+title_english	"Unknown"
+Politics	""
+Social	""
+Natural Disaster	""
+Science	""
+Art	""
+Sports	""
+type	"event"
+details	""
+details_english	"UNKNOWN"
+era_persian	"نیاز به نامگذاری"
+era_english	"New Folder"
+date_gregorian	"2026-01-01"
+date	"فروردین 01, 1405"
+image	""
+
 #a function to get a url of a wikipedia tumbnail image from a wikipedia page link
 def get_wikipedia_thumbnail(url):
     if url == '':

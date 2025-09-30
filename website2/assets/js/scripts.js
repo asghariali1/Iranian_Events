@@ -28,7 +28,8 @@ class IranHistoryTimeline {
             'Zandian': { start: 1751, end: 1794 },
             'Qajar': { start: 1796, end: 1925 },
             'Pahlavi': { start: 1926, end: 1979 },
-            'Islamic Republic': { start: 1979, end: 2025 }
+            'Islamic Republic': { start: 1979, end: 2025 },
+            'New Folder' : { start: 2026, end: 3000 } // Placeholder for future events
         };
         
         this.init();
@@ -407,7 +408,8 @@ class IranHistoryTimeline {
             'Zandian': 'era-zandian',
             'Qajar': 'era-qajar',
             'Pahlavi': 'era-pahlavi',
-            'Islamic Republic': 'era-islamic-republic'
+            'Islamic Republic': 'era-islamic-republic',
+            'New Folder' : 'era-new-folder' // Placeholder for future events
         };
         
         return eraMapping[eraName] || 'era-unknown';
@@ -1529,7 +1531,8 @@ const eraColorMap = {
     'Qajar': 'era-qajar',
     'Pahlavi': 'era-pahlavi',
     'Islamic Republic': 'era-islamic-republic',
-    
+    'New Folder': 'era-new-folder', // Placeholder for future events
+
     // Persian names - matching your data
     'ساسانی': 'era-sasanian',
     'ساسانییان': 'era-sasanian',
