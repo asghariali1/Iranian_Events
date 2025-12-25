@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iranian Historical Events Timeline</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Iranian Historical Events Timeline</h1>
+        <p class="subtitle">Interactive timeline showcasing historical events across different categories</p>
+        
+        <div id="timelines-container">
+            <div class="loading">Loading timelines...</div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <div class="modal-title" id="modalTitle"></div>
+                <div class="modal-subtitle" id="modalSubtitle"></div>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/timeline.js"></script>
+</body>
+</html>
