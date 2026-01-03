@@ -196,6 +196,7 @@ class IranianHistoryStats {
         this.createEraTimelineChart();
         this.createMonthlyChart();
         this.createCategoryChart();
+        this.createCategoryTrendsChart();
     }
 
     createEraDistributionChart() {
@@ -324,16 +325,52 @@ class IranianHistoryStats {
     createEventTypesChart() {
         const ctx = document.getElementById('eventTypesChart').getContext('2d');
         
-        const deaths = this.data.filter(event => event.Death === 1).length;
-        const otherEvents = this.data.length - deaths;
+        // Count events by category fields
+        const categories = {
+            'Politics': 0,
+            'Social': 0,
+            'Economy': 0,
+            'Health': 0,
+            'Natural Disaster': 0,
+            'Technology/Science': 0,
+            'Sports/Entertainment': 0,
+            'Crime/Safety': 0,
+            'Deaths': 0
+        };
+
+        this.data.forEach(event => {
+            if (event.Politics === 1) categories['Politics']++;
+            if (event.Social === 1) categories['Social']++;
+            if (event.Economy === 1) categories['Economy']++;
+            if (event.Health === 1) categories['Health']++;
+            if (event['Natural Disaster'] === 1) categories['Natural Disaster']++;
+            if (event['Technology/Science'] === 1) categories['Technology/Science']++;
+            if (event['Sports/Entertainment'] === 1) categories['Sports/Entertainment']++;
+            if (event['Crime/Safety'] === 1) categories['Crime/Safety']++;
+            if (event.Death === 1 || event.Death === 1.0 || event.category === 'Death') categories['Deaths']++;
+        });
+
+        const sortedCategories = Object.entries(categories)
+            .filter(([,count]) => count > 0)
+            .sort(([,a], [,b]) => b - a);
 
         this.charts.eventTypes = new Chart(ctx, {
-            type: 'pie',
+            type: 'doughnut',
             data: {
-                labels: ['Deaths', 'Other Events'],
+                labels: sortedCategories.map(([cat]) => cat),
                 datasets: [{
-                    data: [deaths, otherEvents],
-                    backgroundColor: ['#FF4444', '#4444FF'],
+                    data: sortedCategories.map(([,count]) => count),
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#4BC0C0',
+                        '#9966FF',
+                        '#FF9F40',
+                        '#C9CBCF',
+                        '#8E44AD',
+                        '#FF4444'
+                    ],
                     borderWidth: 2,
                     borderColor: 'rgba(255, 255, 255, 0.8)'
                 }]
@@ -343,11 +380,11 @@ class IranianHistoryStats {
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'bottom',
+                        position: 'right',
                         labels: {
                             color: 'white',
-                            padding: 20,
-                            font: { size: 14 }
+                            padding: 15,
+                            font: { size: 12 }
                         }
                     },
                     tooltip: {
@@ -739,6 +776,179 @@ class IranianHistoryStats {
                 }
             }
         });
+    }
+
+    createCategoryTrendsChart() {
+        try {
+            const ctx = document.getElementById('categoryTrendsChart').getContext('2d');
+            
+            // Get year range from data
+            const years = this.data
+                .map(event => {
+                    if (!event || !event.date_gregorian) return null;
+                    try {
+                        const year = parseInt(event.date_gregorian.split('-')[0]);
+                        return !isNaN(year) && isFinite(year) ? year : null;
+                    } catch (e) {
+                        return null;
+                    }
+                })
+                .filter(year => year !== null);
+            
+            if (years.length === 0) {
+                console.warn('No valid years found for category trends chart');
+                return;
+            }
+            
+            const minYear = Math.min(...years);
+            const maxYear = Math.max(...years);
+            
+            // Create year bins (every 5 years for better readability)
+            const yearBins = [];
+            for (let year = Math.floor(minYear / 5) * 5; year <= maxYear; year += 5) {
+                yearBins.push(year);
+            }
+            
+            // Count events by category and year bin
+            const categoryData = {
+                'Politics': new Array(yearBins.length).fill(0),
+                'Social': new Array(yearBins.length).fill(0),
+                'Economy': new Array(yearBins.length).fill(0),
+                'Health': new Array(yearBins.length).fill(0),
+                'Natural Disaster': new Array(yearBins.length).fill(0),
+                'Technology/Science': new Array(yearBins.length).fill(0),
+                'Sports/Entertainment': new Array(yearBins.length).fill(0),
+                'Crime/Safety': new Array(yearBins.length).fill(0),
+                'Deaths': new Array(yearBins.length).fill(0)
+            };
+            
+            this.data.forEach(event => {
+                if (!event || !event.date_gregorian) return;
+                
+                try {
+                    const year = parseInt(event.date_gregorian.split('-')[0]);
+                    if (isNaN(year)) return;
+                    
+                    // Find the appropriate year bin
+                    const binIndex = Math.floor((year - yearBins[0]) / 5);
+                    if (binIndex >= 0 && binIndex < yearBins.length) {
+                        if (event.Politics === 1) categoryData['Politics'][binIndex]++;
+                        if (event.Social === 1) categoryData['Social'][binIndex]++;
+                        if (event.Economy === 1) categoryData['Economy'][binIndex]++;
+                        if (event.Health === 1) categoryData['Health'][binIndex]++;
+                        if (event['Natural Disaster'] === 1) categoryData['Natural Disaster'][binIndex]++;
+                        if (event['Technology/Science'] === 1) categoryData['Technology/Science'][binIndex]++;
+                        if (event['Sports/Entertainment'] === 1) categoryData['Sports/Entertainment'][binIndex]++;
+                        if (event['Crime/Safety'] === 1) categoryData['Crime/Safety'][binIndex]++;
+                        if (event.Death === 1 || event.Death === 1.0 || event.category === 'Death') {
+                            categoryData['Deaths'][binIndex]++;
+                        }
+                    }
+                } catch (e) {
+                    // Skip invalid entries
+                }
+            });
+            
+            // Create datasets for each category
+            const colors = [
+                { bg: 'rgba(255, 99, 132, 0.6)', border: 'rgba(255, 99, 132, 1)' },
+                { bg: 'rgba(54, 162, 235, 0.6)', border: 'rgba(54, 162, 235, 1)' },
+                { bg: 'rgba(255, 206, 86, 0.6)', border: 'rgba(255, 206, 86, 1)' },
+                { bg: 'rgba(75, 192, 192, 0.6)', border: 'rgba(75, 192, 192, 1)' },
+                { bg: 'rgba(153, 102, 255, 0.6)', border: 'rgba(153, 102, 255, 1)' },
+                { bg: 'rgba(255, 159, 64, 0.6)', border: 'rgba(255, 159, 64, 1)' },
+                { bg: 'rgba(199, 199, 199, 0.6)', border: 'rgba(199, 199, 199, 1)' },
+                { bg: 'rgba(83, 102, 255, 0.6)', border: 'rgba(83, 102, 255, 1)' },
+                { bg: 'rgba(255, 68, 68, 0.6)', border: 'rgba(255, 68, 68, 1)' }
+            ];
+            
+            const datasets = Object.entries(categoryData).map(([category, data], index) => ({
+                label: category,
+                data: data,
+                borderColor: colors[index].border,
+                backgroundColor: colors[index].bg,
+                borderWidth: 2,
+                fill: false,
+                tension: 0.3,
+                pointRadius: 3,
+                pointHoverRadius: 6
+            }));
+            
+            this.charts.categoryTrends = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: yearBins.map(year => year.toString()),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: 'white',
+                                padding: 15,
+                                font: { size: 11 },
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: (context) => {
+                                    const year = parseInt(context[0].label);
+                                    return `${year}-${year + 4}`;
+                                },
+                                label: (context) => {
+                                    return `${context.dataset.label}: ${context.parsed.y.toLocaleString()} events`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Year',
+                                color: 'white',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            ticks: { 
+                                color: 'white',
+                                maxRotation: 45,
+                                minRotation: 0,
+                                autoSkip: true,
+                                maxTicksLimit: 20
+                            },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Number of Events',
+                                color: 'white',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            beginAtZero: true,
+                            ticks: { 
+                                color: 'white',
+                                callback: function(value) {
+                                    return value.toLocaleString();
+                                }
+                            },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            console.error('Error creating category trends chart:', error);
+        }
     }
 
     populateTables() {
