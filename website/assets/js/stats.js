@@ -30,6 +30,8 @@ class IranianHistoryStats {
 
     async loadData() {
         try {
+            console.log('Starting data load from current location:', window.location.href);
+            
             // Load data from multiple category JSON files
             const categoryFiles = [
                 { file: 'Politics_data.json', category: 'Politics' },
@@ -40,7 +42,7 @@ class IranianHistoryStats {
                 { file: 'Crime_Safety_data.json', category: 'Crime_Safety' },
                 { file: 'Sports_Entertainment_data.json', category: 'Sports_Entertainment' },
                 { file: 'Death_data.json', category: 'Death' },
-                { file: 'Natural Disaster_data.json', category: 'Natural_Disaster' }
+                { file: 'Natural_Disaster_data.json', category: 'Natural_Disaster' }
             ];
             
             const allEvents = [];
@@ -48,19 +50,23 @@ class IranianHistoryStats {
             // Fetch all category files in parallel
             const fetchPromises = categoryFiles.map(async ({ file, category }) => {
                 try {
-                    const response = await fetch(`assets/data/${file}`);
+                    const url = `assets/data/${file}`;
+                    console.log(`Attempting to load: ${url}`);
+                    const response = await fetch(url);
                     if (!response.ok) {
-                        console.warn(`Failed to load ${file}: ${response.status}`);
+                        console.error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
+                        console.error(`Full URL: ${response.url}`);
                         return [];
                     }
                     const events = await response.json();
+                    console.log(`Successfully loaded ${file}: ${events.length} events`);
                     // Add category to each event if not present
                     return events.map(event => ({
                         ...event,
                         category: event.category || category
                     }));
                 } catch (error) {
-                    console.warn(`Error loading ${file}:`, error);
+                    console.error(`Error loading ${file}:`, error);
                     return [];
                 }
             });

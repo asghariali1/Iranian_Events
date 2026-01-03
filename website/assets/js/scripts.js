@@ -210,7 +210,7 @@ createDateObject(event) {
 
     async getNaturalDisasterEvents() {
         try {
-            const response = await fetch('assets/data/Natural Disaster_data.json');
+            const response = await fetch('assets/data/Natural_Disaster_data.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! in loading the natural disaster data status: ${response.status}`);
             }
