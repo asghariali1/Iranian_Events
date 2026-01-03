@@ -138,9 +138,55 @@ class IranianHistoryStats {
             if (totalErasEl) totalErasEl.textContent = eras.size.toString();
             if (totalDeathsEl) totalDeathsEl.textContent = deaths.toLocaleString();
             if (yearSpanEl) yearSpanEl.textContent = `${yearSpan} years`;
+            
+            // Update category counts
+            this.updateCategoryCounts();
         } catch (error) {
             console.error('Error calculating overview stats:', error);
         }
+    }
+
+    updateCategoryCounts() {
+        const categories = {
+            Politics: 0,
+            Social: 0,
+            Economy: 0,
+            Health: 0,
+            'Natural Disaster': 0,
+            'Technology/Science': 0,
+            'Sports/Entertainment': 0,
+            'Crime/Safety': 0
+        };
+
+        this.data.forEach(event => {
+            if (event.Politics === 1) categories.Politics++;
+            if (event.Social === 1) categories.Social++;
+            if (event.Economy === 1) categories.Economy++;
+            if (event.Health === 1) categories.Health++;
+            if (event['Natural Disaster'] === 1) categories['Natural Disaster']++;
+            if (event['Technology/Science'] === 1) categories['Technology/Science']++;
+            if (event['Sports/Entertainment'] === 1) categories['Sports/Entertainment']++;
+            if (event['Crime/Safety'] === 1) categories['Crime/Safety']++;
+        });
+
+        // Update DOM elements
+        const elements = {
+            politicsCount: categories.Politics,
+            socialCount: categories.Social,
+            economyCount: categories.Economy,
+            healthCount: categories.Health,
+            naturalDisasterCount: categories['Natural Disaster'],
+            technologyCount: categories['Technology/Science'],
+            sportsCount: categories['Sports/Entertainment'],
+            crimeCount: categories['Crime/Safety']
+        };
+
+        Object.entries(elements).forEach(([id, count]) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = count.toLocaleString();
+        });
+
+        console.log('Category counts:', categories);
     }
 
     createCharts() {
@@ -615,25 +661,43 @@ class IranianHistoryStats {
             if (event['Technology/Science'] === 1) categories['Technology/Science']++;
             if (event['Sports/Entertainment'] === 1) categories['Sports/Entertainment']++;
             if (event['Crime/Safety'] === 1) categories['Crime/Safety']++;
-            if (event.Death === 1) categories['Deaths']++;
+            if (event.Death === 1 || event.Death === 1.0 || event.category === 'Death') categories['Deaths']++;
         });
 
-        const filteredCategories = Object.entries(categories)
+        const sortedCategories = Object.entries(categories)
             .filter(([,count]) => count > 0)
             .sort(([,a], [,b]) => b - a);
 
         this.charts.category = new Chart(ctx, {
-            type: 'polarArea',
+            type: 'bar',
             data: {
-                labels: filteredCategories.map(([cat]) => cat),
+                labels: sortedCategories.map(([cat]) => cat),
                 datasets: [{
-                    data: filteredCategories.map(([,count]) => count),
+                    label: 'Number of Events',
+                    data: sortedCategories.map(([,count]) => count),
                     backgroundColor: [
-                        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
-                        '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF', '#8E44AD'
-                    ].slice(0, filteredCategories.length),
-                    borderWidth: 2,
-                    borderColor: 'rgba(255, 255, 255, 0.8)'
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 206, 86, 0.8)',
+                        'rgba(75, 192, 192, 0.8)',
+                        'rgba(153, 102, 255, 0.8)',
+                        'rgba(255, 159, 64, 0.8)',
+                        'rgba(199, 199, 199, 0.8)',
+                        'rgba(83, 102, 255, 0.8)',
+                        'rgba(142, 68, 173, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(199, 199, 199, 1)',
+                        'rgba(83, 102, 255, 1)',
+                        'rgba(142, 68, 173, 1)'
+                    ],
+                    borderWidth: 2
                 }]
             },
             options: {
@@ -641,19 +705,36 @@ class IranianHistoryStats {
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'right',
-                        labels: {
-                            color: 'white',
-                            padding: 10,
-                            font: { size: 12 }
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => {
+                                const total = sortedCategories.reduce((sum, [,count]) => sum + count, 0);
+                                const percentage = ((context.raw / total) * 100).toFixed(1);
+                                return `${context.raw.toLocaleString()} events (${percentage}%)`;
+                            }
                         }
                     }
                 },
                 scales: {
-                    r: {
-                        ticks: { color: 'white' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' }
+                    x: {
+                        ticks: { 
+                            color: 'white',
+                            maxRotation: 45,
+                            minRotation: 45
+                        },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: { 
+                            color: 'white',
+                            callback: function(value) {
+                                return value.toLocaleString();
+                            }
+                        },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
                     }
                 }
             }
