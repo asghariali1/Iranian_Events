@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاریخ ایران - خط زمان</title>
+    <link href="assets/css/style_fa.css" rel="stylesheet">
+</head>
+<body>
+    <div class="timeline-container">
+        <!-- Header -->
+        <div class="timeline-header">
+            <h1 class="timeline-title">تاریخ ایران</h1>
+            <p class="timeline-subtitle">سفر در تاریخ ایران باستان</p>
+        </div>
+
+        <!-- Main Timeline Area -->
+        <div class="timeline-main">
+            <div class="content-area">
+                <div class="content-panel">
+                    <div class="slide-content" id="slideContent">
+                        <div class="slide-header">
+                            <div class="slide-meta">
+                                <div class="slide-date" id="slideDate">تاریخ</div>
+                                <div class="slide-era" id="slideEra">دوره</div>
+                                <div class="slide-category" id="slideCategory">دسته‌بندی</div>
+                            </div>
+                            <h2 class="slide-title" id="slideTitle">عنوان رویداد</h2>
+                        </div>
+                        <div class="slide-body">
+                            <div class="slide-text" id="slideText">
+                                توضیحات رویداد در اینجا نمایش داده می‌شود...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-panel">
+                    <div class="media-content">
+                        <img
+                            id="mediaImage"
+                            class="media-image"
+                            alt="تصویر رویداد"
+                            style="display: none"
+                        />
+                        <div
+                            id="mediaCaption"
+                            class="media-caption"
+                            style="display: none"
+                        ></div>
+                    </div>
+                    <!-- Controls -->
+                    <div class="timeline-controls">
+                        <button class="control-btn" onclick="previousSlide()">‹</button>
+                        <button
+                            class="control-btn"
+                            onclick="toggleAutoplay()"
+                            id="playBtn"
+                        >
+                            ⏸
+                        </button>
+                        <button class="control-btn" onclick="nextSlide()">›</button>
+                        <button class="control-btn" onclick="switchLanguage()">
+                            EN/فا
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Multi-Timeline Container -->
+            <div class="multi-timeline-container">
+                <!-- Deaths Timeline -->
+                <div class="timeline-track" id="deathsTimeline">
+                    <div class="timeline-track-header">
+                        <div class="timeline-track-label">مرگ‌ها</div>
+                        <div class="timeline-track-count" id="deathsCount">۰ مرگ</div>
+                    </div>
+                    <div class="timeline-track-content">
+                        <div class="timeline-scale" id="deathsTimelineScale">
+                            <!-- Death timeline scale will be generated here -->
+                        </div>
+                        <div class="timeline-bar-container">
+                            <div class="timeline-bar deaths-bar" id="deathsTimelineBar">
+                                <!-- Deaths timeline bar and zoom indicator -->
+                            </div>
+                            <div class="timeline-zoom-area" id="deathsTimelineZoomArea">
+                                <!-- Deaths zoom focus area indicator -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Events Timeline -->
+                <div class="timeline-track" id="eventsTimeline">
+                    <div class="timeline-track-header">
+                        <div class="timeline-track-label">رویدادها</div>
+                        <div class="timeline-track-count" id="eventsCount">۰ رویداد</div>
+                    </div>
+                    <div class="timeline-track-content">
+                        <div class="timeline-scale" id="eventsTimelineScale">
+                            <!-- Events timeline scale will be generated here -->
+                        </div>
+                        <div class="timeline-bar-container">
+                            <div class="timeline-bar events-bar" id="eventsTimelineBar">
+                                <!-- Events timeline bar and zoom indicator -->
+                            </div>
+                            <div class="timeline-zoom-area" id="eventsTimelineZoomArea">
+                                <!-- Events zoom focus area indicator -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Navigation (Fixed at bottom) -->
+        <div class="timeline-nav">
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb-container">
+                <div id="breadcrumb">
+                    <span class="breadcrumb-item active">دوره‌ها</span>
+                </div>
+            </div>
+            
+            <!-- Back Button -->
+            <div class="back-button" onclick="navigateBack()" title="بازگشت">
+                →
+            </div>
+            
+            <!-- Level Indicator -->
+            <div class="level-indicator" id="levelIndicator">
+                سطح دوره‌ها
+            </div>
+            
+            <div id="timelineTrack">
+                <!-- Timeline content will be generated here -->
+            </div>
+        </div>
+        
+        <!-- Search Box -->
+        <div class="search-container">
+            <input
+                type="text"
+                id="searchBox"
+                class="search-box"
+                placeholder="جستجوی رویدادها..."
+            />
+        </div>
+    </div>
+
+    <script src="assets/js/scripts_fa.js"></script>
+</body>
+</html>

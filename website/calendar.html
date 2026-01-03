@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iranian History Calendar</title>
+    <link rel="stylesheet" href="assets/css/calendar.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <!-- Header -->
+        <header class="calendar-header">
+            <div class="header-content">
+                <h1 class="calendar-title">Iranian History Calendar</h1>
+                <p class="calendar-subtitle">Historical Events by Date</p>
+                <nav class="calendar-nav">
+                    <a href="index.html" class="nav-btn">🏠 Home</a>
+                    <a href="timeline.html" class="nav-btn">📅 Timeline</a>
+                    <a href="stats.html" class="nav-btn">📊 Statistics</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Calendar Controls -->
+        <div class="calendar-controls">
+            <button id="prevMonth" class="control-btn">◀ Previous</button>
+            <h2 id="currentMonth" class="current-month">January</h2>
+            <button id="nextMonth" class="control-btn">Next ▶</button>
+        </div>
+
+        <!-- Calendar Grid -->
+        <div class="calendar-grid" id="calendarGrid">
+            <div class="weekday-header">Sun</div>
+            <div class="weekday-header">Mon</div>
+            <div class="weekday-header">Tue</div>
+            <div class="weekday-header">Wed</div>
+            <div class="weekday-header">Thu</div>
+            <div class="weekday-header">Fri</div>
+            <div class="weekday-header">Sat</div>
+            <!-- Calendar days will be dynamically generated here -->
+        </div>
+
+        <!-- Event Details Panel -->
+        <div class="event-panel" id="eventPanel">
+            <div class="panel-header">
+                <h3 id="panelDate">Select a date</h3>
+                <button id="closePanel" class="close-btn">✕</button>
+            </div>
+            <div class="panel-content" id="panelContent">
+                <p class="no-events">Click on a date with events to see details</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/calendar.js"></script>
+</body>
+</html>

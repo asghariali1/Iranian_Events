@@ -3,72 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontal Interactive Timeline</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <title>On This Day - Iran History Timeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1833 0%, #1a2850 50%, #0a1833 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(10, 24, 51, 0.9), rgba(39, 70, 144, 0.7));
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .header .date {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .timeline-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #274690, #4a7dde);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(39, 70, 144, 0.4);
+        }
+
+        .timeline-btn:hover {
+            background: linear-gradient(135deg, #4a7dde, #6ba3ff);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(39, 70, 144, 0.6);
+        }
+
+        .container {
+            flex: 1;
+            max-width: 1400px;
+            width: 95%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .event-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .event-year {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #6ba3ff;
+            margin-bottom: 10px;
+        }
+
+        .event-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .event-tag {
+            padding: 4px 10px;
+            background: rgba(39, 70, 144, 0.5);
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .event-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .no-events {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 1.3rem;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="hero-section">
-            <h1 class="hero-title">Iran Events Timeline</h1>
-            <p class="hero-subtitle">Navigate through time with zoom and pan controls</p>
-        </div>
-
-        <div class="container">
-            <div class="timeline-container">
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All Events</button>
-                    <button class="filter-btn" data-filter="Event">Events</button>
-                    <button class="filter-btn" data-filter="milestone">Milestones</button>
-                    <button class="filter-btn" data-filter="achievement">Achievements</button>
-                </div>
-
-                <div class="instructions">
-                    <i class="fas fa-info-circle"></i> Drag to pan • Use zoom controls • Click events for details • Hover to interact
-                </div>
-
-                <div class="timeline-viewport" id="timelineViewport">
-                    <div class="zoom-controls">
-                        <button class="zoom-btn" id="zoomIn" title="Zoom In">
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <button class="zoom-btn" id="zoomOut" title="Zoom Out">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button class="reset-btn" id="resetView" title="Reset View">
-                            <i class="fas fa-home"></i>
-                        </button>
-                    </div>
-                    <div class="zoom-indicator" id="zoomIndicator">100%</div>
-
-                    <div class="timeline-canvas" id="timelineCanvas">
-                        <div class="timeline-line"></div>
-                        <!-- Timeline items will be dynamically added here -->
-                    </div>
-                </div>
-            </div>
+    <div class="header">
+        <h1>On This Day in Iranian History</h1>
+        <div class="date" id="currentDate"></div>
+        <p class="subtitle">Discover what happened on this day in previous years</p>
+        <div class="nav-buttons">
+            <a href="timeline.html" class="timeline-btn">📅 Timeline</a>
+            <a href="calendar.html" class="timeline-btn">📆 Calendar</a>
+            <a href="stats.html" class="timeline-btn">📊 Statistics</a>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="eventModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Event Details</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="modalDate" class="text-muted mb-2"></div>
-                    <div id="modalDescription"></div>
-                    <div id="modalTags" class="mt-3"></div>
-                </div>
-            </div>
+    <div class="container">
+        <div id="eventsContainer" class="loading">
+            <div class="spinner"></div>
+            <p>Loading events...</p>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script>
+        // Get current date
+        const today = new Date();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        
+        // Display formatted date
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = today.toLocaleDateString('en-US', dateOptions);
+
+        // Load and filter events
+        fetch('assets/data/merged_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const allEvents = [];
+                
+                // Flatten all events
+                for (const key in data) {
+                    if (Array.isArray(data[key])) {
+                        allEvents.push(...data[key]);
+                    }
+                }
+
+                // Filter events for this day
+                const todayEvents = allEvents.filter(event => {
+                    if (event.date_gregorian) {
+                        const parts = event.date_gregorian.split('-');
+                        if (parts.length >= 2) {
+                            return parts[1] === month && parts[2] === day;
+                        }
+                    }
+                    return false;
+                });
+
+                // Sort by year (newest first)
+                todayEvents.sort((a, b) => {
+                    const yearA = parseInt(a.date_gregorian.split('-')[0]);
+                    const yearB = parseInt(b.date_gregorian.split('-')[0]);
+                    return yearB - yearA;
+                });
+
+                displayEvents(todayEvents);
+            })
+            .catch(error => {
+                console.error('Error loading events:', error);
+                document.getElementById('eventsContainer').innerHTML = 
+                    '<div class="no-events">Error loading events. Please try again later.</div>';
+            });
+
+        function displayEvents(events) {
+            const container = document.getElementById('eventsContainer');
+            
+            if (events.length === 0) {
+                container.innerHTML = '<div class="no-events">No events found for this day in history.</div>';
+                return;
+            }
+
+            container.className = 'events-grid';
+            container.innerHTML = '';
+
+            events.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                
+                const year = event.date_gregorian.split('-')[0];
+                const title = event.title_english || event.title || 'Untitled Event';
+                const description = event.details || event.description || 'No description available';
+                
+                // Get categories
+                const categories = [];
+                const catFields = ['Crime/Safety', 'Economy', 'Health', 'Natural Disaster', 'Politics', 'Social', 'Sports/Entertainment', 'Technology/Science', 'Death'];
+                catFields.forEach(cat => {
+                    if (event[cat] === 1) categories.push(cat);
+                });
+
+                card.innerHTML = `
+                    <div class="event-year">${year}</div>
+                    <div class="event-title">${title}</div>
+                    <div class="event-meta">
+                        ${event.era_english ? `<span class="event-tag">🏛️ ${event.era_english}</span>` : ''}
+                        ${categories.map(cat => `<span class="event-tag">${cat}</span>`).join('')}
+                    </div>
+                    <div class="event-description">${description}</div>
+                `;
+
+                card.addEventListener('click', () => {
+                    // Find the event index in the full dataset and navigate to timeline
+                    window.location.href = `timeline.html`;
+                });
+
+                container.appendChild(card);
+            });
+        }
+    </script>
 </body>
 </html>
