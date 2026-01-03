@@ -97,13 +97,26 @@ class IranianHistoryStats {
         try {
             const totalEvents = this.data.length;
             const eras = new Set(this.data.map(event => event && event.era_english).filter(Boolean));
-            const deaths = this.data.filter(event => event && event.Death === 1).length;
+            
+            // Count deaths - check both Death field and category
+            const deaths = this.data.filter(event => {
+                if (!event) return false;
+                // Check if Death field is 1 (could be int or float)
+                return event.Death === 1 || event.Death === 1.0 || event.category === 'Death';
+            }).length;
+            
+            console.log(`Debug: Total events: ${totalEvents}, Deaths found: ${deaths}`);
+            console.log(`Sample death flags:`, this.data.slice(0, 5).map(e => ({ id: e.id, Death: e.Death, category: e.category })));
             
             const years = this.data
                 .map(event => {
                     if (!event || !event.date_gregorian) return null;
-                    const year = parseInt(event.date_gregorian.split('-')[0]);
-                    return !isNaN(year) && isFinite(year) ? year : null;
+                    try {
+                        const year = parseInt(event.date_gregorian.split('-')[0]);
+                        return !isNaN(year) && isFinite(year) ? year : null;
+                    } catch (e) {
+                        return null;
+                    }
                 })
                 .filter(year => year !== null);
             
@@ -112,6 +125,7 @@ class IranianHistoryStats {
                 const minYear = Math.min(...years);
                 const maxYear = Math.max(...years);
                 yearSpan = maxYear - minYear;
+                console.log(`Year range: ${minYear} - ${maxYear}, span: ${yearSpan}`);
             }
 
             // Update overview cards with safe values
