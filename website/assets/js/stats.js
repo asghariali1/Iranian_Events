@@ -68,7 +68,15 @@ class IranianHistoryStats {
             const results = await Promise.all(fetchPromises);
             results.forEach(events => allEvents.push(...events));
             
-            this.data = allEvents;
+            // Deduplicate events by ID (events can appear in multiple category files)
+            const uniqueEvents = new Map();
+            allEvents.forEach(event => {
+                if (event && typeof event === 'object' && event.id) {
+                    uniqueEvents.set(event.id, event);
+                }
+            });
+            
+            this.data = Array.from(uniqueEvents.values());
             
             // Validate and clean data
             if (!Array.isArray(this.data)) {
@@ -78,7 +86,7 @@ class IranianHistoryStats {
             // Filter out invalid entries
             this.data = this.data.filter(event => event && typeof event === 'object');
             
-            console.log(`Loaded ${this.data.length} historical events from ${categoryFiles.length} category files`);
+            console.log(`Loaded ${this.data.length} unique historical events from ${categoryFiles.length} category files (${allEvents.length} total entries before deduplication)`);
         } catch (error) {
             console.error('Failed to load data:', error);
             throw error;
