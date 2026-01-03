@@ -89,11 +89,15 @@ class IranianHistoryStats {
         try {
             const totalEvents = this.data.length;
             const eras = new Set(this.data.map(event => event && event.era_english).filter(Boolean));
-            const deaths = this.data.filter(event => event && event.type === 'death').length;
+            const deaths = this.data.filter(event => event && event.Death === 1).length;
             
             const years = this.data
-                .map(event => event && (event.year_gregorian || event.year))
-                .filter(year => year && !isNaN(year) && isFinite(year));
+                .map(event => {
+                    if (!event || !event.date_gregorian) return null;
+                    const year = parseInt(event.date_gregorian.split('-')[0]);
+                    return !isNaN(year) && isFinite(year) ? year : null;
+                })
+                .filter(year => year !== null);
             
             let yearSpan = 0;
             if (years.length > 0) {
@@ -189,8 +193,9 @@ class IranianHistoryStats {
         // Group events by century
         const centuryCount = {};
         this.data.forEach(event => {
-            const year = event.year_gregorian || event.year;
-            if (year) {
+            if (!event || !event.date_gregorian) return;
+            const year = parseInt(event.date_gregorian.split('-')[0]);
+            if (year && !isNaN(year)) {
                 const century = Math.floor(year / 100) * 100;
                 const centuryLabel = year > 0 ? `${century}s CE` : `${Math.abs(century)}s BCE`;
                 centuryCount[centuryLabel] = (centuryCount[centuryLabel] || 0) + 1;
@@ -251,7 +256,7 @@ class IranianHistoryStats {
     createEventTypesChart() {
         const ctx = document.getElementById('eventTypesChart').getContext('2d');
         
-        const deaths = this.data.filter(event => event.type === 'death').length;
+        const deaths = this.data.filter(event => event.Death === 1).length;
         const otherEvents = this.data.length - deaths;
 
         this.charts.eventTypes = new Chart(ctx, {
@@ -297,24 +302,33 @@ class IranianHistoryStats {
             
             // Filter events from 1900 to 2025 with valid dates
             const validEvents = this.data.filter(event => {
-                const year = event && (event.year_gregorian || event.year);
-                const month = event && (event.month_gregorian || event.month) || 1;
-                const day = event && (event.day_gregorian || event.day) || 1;
-                return year && !isNaN(year) && year >= 1900 && year <= 2025 && 
-                       month >= 1 && month <= 12 &&
-                       day >= 1 && day <= 31;
+                if (!event || !event.date_gregorian) return false;
+                
+                try {
+                    const dateParts = event.date_gregorian.split('-');
+                    const year = parseInt(dateParts[0]);
+                    const month = parseInt(dateParts[1]);
+                    const day = parseInt(dateParts[2]);
+                    
+                    return !isNaN(year) && year >= 1900 && year <= 2025 && 
+                           month >= 1 && month <= 12 &&
+                           day >= 1 && day <= 31;
+                } catch (e) {
+                    return false;
+                }
             });
 
             // Group events by date (daily basis)
             const dailyFrequency = {};
             
             validEvents.forEach(event => {
-                const year = event.year_gregorian || event.year;
-                const month = (event.month_gregorian || event.month || 1);
-                const day = (event.day_gregorian || event.day || 1);
+                const dateParts = event.date_gregorian.split('-');
+                const year = parseInt(dateParts[0]);
+                const month = parseInt(dateParts[1]);
+                const day = parseInt(dateParts[2]);
                 
                 // Create date string and JavaScript Date object
-                const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+                const dateStr = event.date_gregorian;
                 const dateObj = new Date(year, month - 1, day);
                 
                 if (!dailyFrequency[dateStr]) {
@@ -504,9 +518,14 @@ class IranianHistoryStats {
 
         const monthlyCount = new Array(12).fill(0);
         this.data.forEach(event => {
-            const month = (event.month_gregorian || event.month);
-            if (month && month >= 1 && month <= 12) {
-                monthlyCount[month - 1]++;
+            if (!event || !event.date_gregorian) return;
+            try {
+                const month = parseInt(event.date_gregorian.split('-')[1]);
+                if (month && month >= 1 && month <= 12) {
+                    monthlyCount[month - 1]++;
+                }
+            } catch (e) {
+                // Skip invalid dates
             }
         });
 
@@ -552,36 +571,29 @@ class IranianHistoryStats {
     createCategoryChart() {
         const ctx = document.getElementById('categoryChart').getContext('2d');
         
-        // Count events by category fields
+        // Count events by category fields (these are binary flags in new data)
         const categories = {
             'Politics': 0,
             'Social': 0,
+            'Economy': 0,
+            'Health': 0,
             'Natural Disaster': 0,
-            'Science': 0,
-            'Art': 0,
-            'Sports': 0,
-            'Deaths': 0,
-            'Other': 0
+            'Technology/Science': 0,
+            'Sports/Entertainment': 0,
+            'Crime/Safety': 0,
+            'Deaths': 0
         };
 
         this.data.forEach(event => {
-            let categorized = false;
-            
-            if (event.type === 'death') {
-                categories['Deaths']++;
-                categorized = true;
-            }
-            
-            ['Politics', 'Social', 'Natural Disaster', 'Science', 'Art', 'Sports'].forEach(cat => {
-                if (event[cat] && typeof event[cat] === 'string' && event[cat].trim()) {
-                    categories[cat]++;
-                    categorized = true;
-                }
-            });
-            
-            if (!categorized) {
-                categories['Other']++;
-            }
+            if (event.Politics === 1) categories['Politics']++;
+            if (event.Social === 1) categories['Social']++;
+            if (event.Economy === 1) categories['Economy']++;
+            if (event.Health === 1) categories['Health']++;
+            if (event['Natural Disaster'] === 1) categories['Natural Disaster']++;
+            if (event['Technology/Science'] === 1) categories['Technology/Science']++;
+            if (event['Sports/Entertainment'] === 1) categories['Sports/Entertainment']++;
+            if (event['Crime/Safety'] === 1) categories['Crime/Safety']++;
+            if (event.Death === 1) categories['Deaths']++;
         });
 
         const filteredCategories = Object.entries(categories)
@@ -596,7 +608,7 @@ class IranianHistoryStats {
                     data: filteredCategories.map(([,count]) => count),
                     backgroundColor: [
                         '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
-                        '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF'
+                        '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF', '#8E44AD'
                     ].slice(0, filteredCategories.length),
                     borderWidth: 2,
                     borderColor: 'rgba(255, 255, 255, 0.8)'
@@ -648,15 +660,21 @@ class IranianHistoryStats {
             }
             
             eraStats[era].total++;
-            if (event.type === 'death') {
+            if (event.Death === 1) {
                 eraStats[era].deaths++;
             } else {
                 eraStats[era].events++;
             }
             
-            const year = event.year_gregorian || event.year;
-            if (year) {
-                eraStats[era].years.push(year);
+            if (event.date_gregorian) {
+                try {
+                    const year = parseInt(event.date_gregorian.split('-')[0]);
+                    if (!isNaN(year)) {
+                        eraStats[era].years.push(year);
+                    }
+                } catch (e) {
+                    // Skip invalid dates
+                }
             }
         });
 
@@ -687,23 +705,31 @@ class IranianHistoryStats {
     populateTopEventsTable() {
         const tbody = document.querySelector('#topEventsTable tbody');
         
-        // Get a sample of notable events (with images, spread across eras)
+        // Get a sample of notable events (spread across eras and categories)
         const notableEvents = this.data
-            .filter(event => event.image && (event.title_english || event.title))
+            .filter(event => event.title_english || event.title)
             .sort((a, b) => Math.random() - 0.5) // Randomize
             .slice(0, 20); // Take first 20
 
         tbody.innerHTML = notableEvents.map(event => {
-            const year = event.year_gregorian || event.year || 'Unknown';
+            let year = 'Unknown';
+            if (event.date_gregorian) {
+                try {
+                    year = event.date_gregorian.split('-')[0];
+                } catch (e) {
+                    year = 'Unknown';
+                }
+            }
+            
             const title = event.title_english || event.title || 'Unknown Event';
             const era = event.era_english || 'Unknown';
-            const type = event.type || 'Event';
+            const type = event.Death === 1 ? 'Death' : 'Event';
             const eraClass = this.getEraClass(era);
             
             return `
                 <tr class="${eraClass}">
                     <td><strong>${year}</strong></td>
-                    <td>${title.substring(0, 50)}${title.length > 50 ? '...' : ''}</td>
+                    <td>${title.substring(0, 80)}${title.length > 80 ? '...' : ''}</td>
                     <td>${era}</td>
                     <td>${type}</td>
                 </tr>
