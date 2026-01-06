@@ -52,21 +52,33 @@ class IranHistoryTimeline {
             this.calculateDateRange();
             this.buildHierarchicalData();
             this.filteredEvents = [...this.events];
-            this.showTimelineLevel('era');
-            this.setupEventListeners();
             
-            // Show first slide with era colors
-            if (this.filteredEvents.length > 0) {
-                setTimeout(() => {
-                    this.showSlide(0, false);
-                    // Initialize timeline visualization after era elements are created
+            // Check if we have a date parameter in the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedDate = urlParams.get('date') || sessionStorage.getItem('selectedDate');
+            
+            if (selectedDate) {
+                // Filter and show events for the selected date
+                this.showEventsForDate(selectedDate);
+                sessionStorage.removeItem('selectedDate'); // Clear after use
+            } else {
+                // Normal initialization
+                this.showTimelineLevel('era');
+                this.setupEventListeners();
+                
+                // Show first slide with era colors
+                if (this.filteredEvents.length > 0) {
                     setTimeout(() => {
-                        this.initializeTimelineVisualization();
-                    }, 200);
-                }, 100);
+                        this.showSlide(0, false);
+                        // Initialize timeline visualization after era elements are created
+                        setTimeout(() => {
+                            this.initializeTimelineVisualization();
+                        }, 200);
+                    }, 100);
+                }
+                
+                this.startAutoplay();
             }
-            
-            this.startAutoplay();
         } catch (error) {
             console.error('Error initializing timeline:', error);
         }
@@ -568,53 +580,74 @@ createDateObject(event) {
                 eventsByDate[dateStr].push(event);
             });
 
-            // Create timeline points
+            // Create timeline points - one per date with intensity based on event count
             Object.entries(eventsByDate).forEach(([dateStr, eventsOnDate]) => {
                 const eventDate = new Date(dateStr);
                 const daysDiff = (eventDate - minDate) / (1000 * 60 * 60 * 24);
                 const position = (daysDiff / totalDays) * 100;
 
-                // Create a point for each event on this date
-                eventsOnDate.forEach((event, indexOnDate) => {
-                    const point = document.createElement('div');
-                    point.className = `category-timeline-point ${category.class}`;
-                    
-                    // Add offset class to stack events downward
-                    if (indexOnDate > 0) {
-                        point.classList.add(`offset-${indexOnDate % 10}`);
-                    }
-                    
-                    point.style.left = `${position}%`;
-                    
-                    // Store event reference for highlighting
-                    point.__eventData = event;
-                    
-                    const dot = document.createElement('div');
-                    dot.className = 'category-timeline-dot';
-                    point.appendChild(dot);
+                // Create a single point for all events on this date
+                const point = document.createElement('div');
+                point.className = `category-timeline-point ${category.class}`;
+                
+                // Add intensity class based on number of events
+                const eventCount = eventsOnDate.length;
+                if (eventCount > 1) {
+                    point.classList.add('has-multiple');
+                    point.setAttribute('data-event-count', eventCount);
+                }
+                
+                point.style.left = `${position}%`;
+                
+                // Store all events for this date
+                point.__eventData = eventsOnDate;
+                
+                const line = document.createElement('div');
+                line.className = 'category-timeline-dot';
+                
+                // Set line intensity based on event count
+                // More events = stronger opacity and wider line
+                if (eventCount === 1) {
+                    line.style.opacity = '0.4';
+                } else if (eventCount === 2) {
+                    line.style.opacity = '0.6';
+                    line.style.width = '2.5px';
+                } else if (eventCount === 3) {
+                    line.style.opacity = '0.75';
+                    line.style.width = '3px';
+                } else if (eventCount >= 4) {
+                    line.style.opacity = '0.9';
+                    line.style.width = '4px';
+                }
+                
+                point.appendChild(line);
 
-                    // Add click handler
-                    point.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const eventIndex = this.filteredEvents.indexOf(event);
+                // Add click handler
+                point.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    if (eventsOnDate.length === 1) {
+                        // Single event - show it directly
+                        const eventIndex = this.filteredEvents.indexOf(eventsOnDate[0]);
                         if (eventIndex !== -1) {
                             this.showSlide(eventIndex);
                         }
-                    });
-
-                    // Add hover tooltip
-                    point.title = `${event.title_english || event.title} (${dateStr})`;
-
-                    categoryBar.appendChild(point);
+                    } else {
+                        // Multiple events - show popup to select
+                        this.showEventPopup(eventsOnDate, dateStr, e.clientX, e.clientY);
+                    }
                 });
+
+                // Add hover tooltip
+                const titles = eventsOnDate.map(e => e.title_english || e.title).join(', ');
+                point.title = `${eventsOnDate.length} event${eventsOnDate.length > 1 ? 's' : ''} on ${dateStr}${eventsOnDate.length > 1 ? '\n' + titles.substring(0, 200) : ': ' + titles}`;
+
+                categoryBar.appendChild(point);
             });
         });
 
         // Synchronize scrolling across all category bars
         this.synchronizeCategoryScrolling();
-        
-        // Add click handlers for category expansion
-        this.setupCategoryExpansion();
         
         // Initialize zoom
         this.updateZoom();
@@ -733,39 +766,7 @@ createDateObject(event) {
         }
     }
 
-    setupCategoryExpansion() {
-        const categoryTimelines = document.querySelectorAll('.category-timeline');
-        
-        categoryTimelines.forEach(timeline => {
-            timeline.addEventListener('click', (e) => {
-                // Don't toggle if clicking on a timeline point
-                if (e.target.closest('.category-timeline-point')) {
-                    return;
-                }
-                
-                // Toggle full-screen state
-                const wasFullScreen = timeline.classList.contains('full-screen');
-                
-                if (wasFullScreen) {
-                    // Exit full-screen - show all categories
-                    categoryTimelines.forEach(t => {
-                        t.classList.remove('full-screen', 'hidden');
-                    });
-                } else {
-                    // Enter full-screen - hide others
-                    categoryTimelines.forEach(t => {
-                        if (t === timeline) {
-                            t.classList.add('full-screen');
-                            t.classList.remove('hidden');
-                        } else {
-                            t.classList.add('hidden');
-                            t.classList.remove('full-screen');
-                        }
-                    });
-                }
-            });
-        });
-    }
+    // Expansion functionality removed - all categories always visible
 
     synchronizeCategoryScrolling() {
         const timelineScale = document.getElementById('timelineScale');
@@ -1106,8 +1107,50 @@ createDateObject(event) {
     }
 
     navigateBack() {
-        if (this.navigationHistory.length === 0) {
+        console.log('navigateBack called, currentLevel:', this.currentLevel);
+        
+        // If we're at event level, go back to era level
+        if (this.currentLevel === 'event') {
+            // Pop the navigation history if it exists
+            if (this.navigationHistory.length > 0) {
+                this.navigationHistory.pop();
+            }
+            
+            // Reset current era
+            this.currentEra = null;
+            
+            // Reset filtered events to all events
+            this.filteredEvents = [...this.events];
+            
+            // Show era level
             this.showTimelineLevel('era');
+            
+            // Show first event from first era
+            if (this.filteredEvents.length > 0) {
+                setTimeout(() => {
+                    this.showSlide(0, false);
+                }, 100);
+            }
+            
+            // Restart autoplay
+            this.startAutoplay();
+            
+            console.log('Navigated back to era level');
+            return;
+        }
+        
+        // If already at era level or history is empty
+        if (this.navigationHistory.length === 0 || this.currentLevel === 'era') {
+            this.showTimelineLevel('era');
+            
+            // Show first event
+            if (this.filteredEvents.length > 0) {
+                setTimeout(() => {
+                    this.showSlide(0, false);
+                }, 100);
+            }
+            
+            console.log('Already at era level');
             return;
         }
         
@@ -1118,6 +1161,70 @@ createDateObject(event) {
                 this.showTimelineLevel('era');
                 break;
         }
+    }
+
+    showEventsForDate(selectedDate) {
+        // Filter events for the selected date
+        const eventsOnDate = this.events.filter(event => {
+            return event.date_gregorian === selectedDate;
+        });
+        
+        if (eventsOnDate.length === 0) {
+            // Show notification
+            const notification = document.createElement('div');
+            notification.className = 'date-notification';
+            notification.style.background = 'linear-gradient(135deg, #e74c3c, #c0392b)';
+            notification.textContent = `No events found on ${selectedDate}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+            
+            // Show normal era view
+            this.showTimelineLevel('era');
+            this.setupEventListeners();
+            this.startAutoplay();
+            return;
+        }
+        
+        // Update filtered events
+        this.filteredEvents = eventsOnDate;
+        
+        // Find the era for these events (use the era of the first event)
+        const eventEra = eventsOnDate[0].era_english;
+        this.currentEra = eventEra;
+        
+        // Show event level for that era
+        this.showTimelineLevel('event', eventEra);
+        
+        // Setup event listeners
+        this.setupEventListeners();
+        
+        // Show first event of that date
+        setTimeout(() => {
+            this.showSlide(0, false);
+        }, 100);
+        
+        // Generate the timeline visualization with filtered events
+        setTimeout(() => {
+            this.generateCategoryTimelines();
+        }, 200);
+        
+        // Show notification
+        const notification = document.createElement('div');
+        notification.className = 'date-notification';
+        notification.textContent = `Showing ${eventsOnDate.length} event(s) on ${selectedDate}`;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+        
+        // Start autoplay
+        this.startAutoplay();
     }
 
     generateEraBrackets() {

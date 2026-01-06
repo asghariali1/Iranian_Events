@@ -304,6 +304,60 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Date Picker Button */
+.date-picker-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(74, 144, 226, 0.2);
+    border: 1px solid rgba(74, 144, 226, 0.4);
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.date-picker-btn:hover {
+    background: rgba(74, 144, 226, 0.4);
+    border-color: rgba(74, 144, 226, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+/* Date Notification */
+.date-notification {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10001;
+    font-weight: 600;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
 /* Main Content Area */
 .timeline-main {
     flex: 1;
@@ -1580,35 +1634,137 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .timeline-nav {
-        height: 250px;
+        height: 450px;
         bottom: 60px; /* Account for smaller timeline visualization on mobile */
     }
     
     .timeline-main {
         flex-direction: column;
-        padding-bottom: 310px; /* 250px nav + 60px visualization */
+        padding-bottom: 510px; /* 450px nav + 60px visualization */
     }
     
     .content-panel {
         width: 100%;
-        max-height: calc(100vh - 310px);
-            background: transparent !important;
+        max-height: calc(100vh - 510px);
+        background: transparent !important;
     }
     
-    .timeline-nav {
-        order: 2;
-        position: relative;
-        height: 200px;
+    .event-card {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    /* Show event card when timeline-header is hidden (event level) */
+    .timeline-header.hidden + .timeline-main .event-card,
+    body:has(.timeline-header.hidden) .event-card {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        max-height: 50vh !important;
+        overflow: visible !important;
+    }
+    
+    /* Adjust content-area when header is hidden */
+    .timeline-header.hidden + .timeline-main .content-area {
+        padding-top: 10px;
+    }
+    
+    /* Make timeline visualization smaller and lower on mobile when expanded */
+    .timeline-visualization.expanded {
+        height: 45vh !important;
+        max-height: 45vh !important;
+        bottom: 5px !important;
+    }
+    
+    /* Smaller category labels on mobile */
+    .category-label {
+        min-width: 80px !important;
+        font-size: 0.65rem !important;
+        padding-right: 6px !important;
+    }
+    
+    .category-timeline {
+        margin-bottom: 8px !important;
+    }
+    
+    /* Make timeline scale taller with smaller numbers, years only on mobile */
+    .timeline-scale {
+        height: 60px !important;
+        margin-bottom: 5px !important;
+        font-size: 0.7rem !important;
+        background: rgba(0, 0, 0, 0.3) !important;
+        padding: 8px 0 !important;
+    }
+    
+    .timeline-scale-label {
+        font-size: 0.65rem !important;
+        padding: 3px 8px !important;
+        background: rgba(255, 255, 255, 0.2) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+    
+    .timeline-scale-label.year {
+        font-size: 0.7rem !important;
+        padding: 4px 10px !important;
+        background: rgba(102, 126, 234, 0.5) !important;
+        border: 1px solid rgba(102, 126, 234, 0.7) !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Hide month labels on mobile */
+    .timeline-scale-label.month {
+        display: none !important;
+    }
+    
+    /* Increase timeline width for more spacing between years */
+    .timeline-scale-container {
+        min-width: 600% !important;
+    }
+    
+    /* Match category bar width with timeline scale */
+    .category-bar {
+        min-width: 600% !important;
     }
     
     #timelineTrack {
-        padding: 70px 20px 30px 20px;
+        height: 100%;
+        padding: 20px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        gap: 15px !important;
+        position: relative !important;
+    }
+    
+    /* Stack eras vertically on mobile */
+    .timeline-era {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 95% !important;
+        max-width: 500px !important;
+        margin: 0 !important;
+        height: 110px !important;
+    }
+    
+    .timeline-decade,
+    .timeline-year-item {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 95% !important;
+        max-width: 500px !important;
+        margin: 0 !important;
     }
     
     .timeline-point {
+        position: relative !important;
         min-width: 60px;
         height: 60px;
-        margin: 0 20px;
+        margin: 0 15px;
     }
     
     .timeline-dot {
@@ -1617,12 +1773,13 @@ body {
         background: #bd6666;
         opacity: 0.5;
     }
+    
     .timeline-point.active .timeline-dot {
         width: 24px;
         height: 24px;
         background: #751111;
         opacity: 1;
-    border-color: #fff;
+        border-color: #fff;
     }
     
     .timeline-year {
@@ -1648,30 +1805,148 @@ body {
         font-size: 10px;
     }
     
+    .breadcrumb-container {
+        height: 40px;
+        top: -50px;
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+    
+    .breadcrumb-item {
+        font-size: 22px !important;
+    }
+    
+    .level-indicator {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .back-button {
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        left: 10px;
+    }
+    
     #timelineTrack::-webkit-scrollbar {
-        height: 8px;
+        width: 6px;
+    }
+    
+    #timelineTrack::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
     }
 }
 
 @media (max-width: 480px) {
     .timeline-nav {
-        height: 200px;
+        height: 400px;
     }
     
     .timeline-main {
-        padding-bottom: 220px;
+        padding-bottom: 460px;
     }
     
     .content-panel {
-        max-height: calc(100vh - 220px);
+        max-height: calc(100vh - 460px);
+    }
+    
+    .event-card {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    /* Show event card when timeline-header is hidden (event level) */
+    .timeline-header.hidden + .timeline-main .event-card,
+    body:has(.timeline-header.hidden) .event-card {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        max-height: 45vh !important;
+        overflow: visible !important;
+    }
+    
+    /* Make timeline visualization smaller and lower on mobile when expanded */
+    .timeline-visualization.expanded {
+        height: 48vh !important;
+        max-height: 48vh !important;
+        bottom: 5px !important;
+    }
+    
+    /* Smaller category labels on small mobile */
+    .category-label {
+        min-width: 70px !important;
+        font-size: 0.6rem !important;
+        padding-right: 5px !important;
+    }
+    
+    .category-timeline {
+        margin-bottom: 6px !important;
+    }
+    
+    /* Make timeline scale taller with smaller numbers, years only on small mobile */
+    .timeline-scale {
+        height: 55px !important;
+        margin-bottom: 5px !important;
+        font-size: 0.65rem !important;
+        background: rgba(0, 0, 0, 0.3) !important;
+        padding: 7px 0 !important;
+    }
+    
+    .timeline-scale-label {
+        font-size: 0.6rem !important;
+        padding: 3px 7px !important;
+        background: rgba(255, 255, 255, 0.2) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+    
+    .timeline-scale-label.year {
+        font-size: 0.65rem !important;
+        padding: 4px 9px !important;
+        background: rgba(102, 126, 234, 0.5) !important;
+        border: 1px solid rgba(102, 126, 234, 0.7) !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Hide month labels on small mobile */
+    .timeline-scale-label.month {
+        display: none !important;
+    }
+    
+    /* Increase timeline width for more spacing between years on small mobile */
+    .timeline-scale-container {
+        min-width: 500% !important;
+    }
+    
+    /* Match category bar width with timeline scale */
+    .category-bar {
+        min-width: 500% !important;
     }
     
     #timelineTrack {
-        padding: 60px 15px 25px 15px;
+        padding: 15px;
+    }
+    
+    .timeline-era {
+        width: 98% !important;
+        height: 100px !important;
     }
     
     .slide-title {
         font-size: 2rem;
+    }
+    
+    .timeline-era-label {
+        font-size: 14px;
+    }
+    
+    .timeline-era-count {
+        font-size: 11px;
+    }
+    
+    .timeline-era-range {
+        font-size: 10px;
     }
     
     .slide-content {
@@ -1706,13 +1981,14 @@ body {
     right: 2.5%;
     border-radius: 15px;
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 500;
 }
 
 .timeline-categories-container {
     display: none;
     flex-direction: column;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 5px;
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 10px;
@@ -1741,7 +2017,7 @@ body {
 }
 
 .timeline-visualization.expanded .timeline-scale {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 /* Floating Back Button in Timeline Visualization */
@@ -1769,6 +2045,8 @@ body {
 
 .timeline-visualization.expanded .timeline-back-button {
     display: flex;
+    opacity: 1;
+    visibility: visible;
 }
 
 .timeline-back-button:hover {
@@ -1786,29 +2064,16 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    min-height: 30px;
-    transition: all 0.4s ease;
-    cursor: pointer;
+    min-height: 50px;
+    transition: all 0.3s ease;
     padding: 5px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .category-timeline:hover {
     background: rgba(255, 255, 255, 0.05);
-}
-
-.category-timeline.hidden {
-    display: none;
-}
-
-.category-timeline.full-screen {
-    min-height: 400px;
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    margin: 0;
-    padding: 20px;
-    border-radius: 15px;
 }
 
 .category-label {
@@ -1820,44 +2085,16 @@ body {
     padding-right: 10px;
     border-right: 2px solid rgba(255, 255, 255, 0.3);
     position: relative;
-    transition: all 0.3s ease;
-}
-
-.category-label::after {
-    content: '▶';
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.6rem;
-    transition: transform 0.3s ease;
-    opacity: 0.6;
-}
-
-.category-timeline.full-screen .category-label::after {
-    transform: translateY(-50%) rotate(90deg);
-}
-
-.category-timeline.full-screen .category-label {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 1);
-    font-weight: 700;
 }
 
 .category-bar-container {
     flex: 1;
     position: relative;
-    height: 30px;
+    height: 40px;
     background: transparent;
     border-radius: 15px;
     overflow-x: auto;
     overflow-y: visible;
-    transition: all 0.4s ease;
-}
-
-.category-timeline.full-screen .category-bar-container {
-    height: 350px;
-    background: transparent;
 }
 
 .category-bar-container::-webkit-scrollbar {
@@ -1910,6 +2147,9 @@ body {
     transform: translateX(-50%);
     cursor: pointer;
     z-index: 1;
+    height: 100%;
+    top: 0;
+    width: 10px;
 }
 
 .category-timeline-point.has-multiple {
@@ -1917,8 +2157,7 @@ body {
 }
 
 .category-timeline-point.has-multiple .category-timeline-dot {
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.3);
-    border-width: 3px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
 }
 
 .event-count-badge {
@@ -1939,14 +2178,6 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     z-index: 10;
     pointer-events: none;
-}
-
-.category-timeline.expanded .event-count-badge {
-    min-width: 22px;
-    height: 22px;
-    font-size: 0.75rem;
-    top: -10px;
-    right: -10px;
 }
 
 /* Event selection popup */
@@ -2036,101 +2267,33 @@ body {
     background: rgba(102, 126, 234, 0.7);
 }
 
-.category-timeline-point.offset-1 {
-    transform: translateX(-50%) translateY(10px);
-}
-
-.category-timeline-point.offset-2 {
-    transform: translateX(-50%) translateY(20px);
-}
-
-.category-timeline-point.offset-3 {
-    transform: translateX(-50%) translateY(30px);
-}
-
-.category-timeline-point.offset-4 {
-    transform: translateX(-50%) translateY(40px);
-}
-
-.category-timeline-point.offset-5 {
-    transform: translateX(-50%) translateY(50px);
-}
-
-.category-timeline-point.offset-6 {
-    transform: translateX(-50%) translateY(60px);
-}
-
-.category-timeline-point.offset-7 {
-    transform: translateX(-50%) translateY(70px);
-}
-
-.category-timeline-point.offset-8 {
-    transform: translateX(-50%) translateY(80px);
-}
-
-.category-timeline-point.offset-9 {
-    transform: translateX(-50%) translateY(90px);
-}
-
-/* Larger offsets in full-screen view */
-.category-timeline.full-screen .category-timeline-point.offset-1 {
-    transform: translateX(-50%) translateY(20px);
-}
-
-.category-timeline.full-screen .category-timeline-point.offset-2 {
-    transform: translateX(-50%) translateY(40px);
-}
-
-.category-timeline.full-screen .category-timeline-point.offset-3 {
-    transform: translateX(-50%) translateY(60px);
-}
-
-.category-timeline.full-screen .category-timeline-point.offset-4 {
-    transform: translateX(-50%) translateY(80px);
-}
-
-.category-timeline.full-screen .category-timeline-point.offset-5 {
-    transform: translateX(-50%) translateY(100px);
-}
-
-.category-timeline.full-screen .category-timeline-point.offset-6 {
-    transform: translateX(-50%) translateY(120px);
-}
-
-.category-timeline.full-screen .category-timeline-point.offset-7 {
-    transform: translateX(-50%) translateY(140px);
-}
-
-.category-timeline.full-screen .category-timeline-point.offset-8 {
-    transform: translateX(-50%) translateY(160px);
-}
-
-.category-timeline.full-screen .category-timeline-point.offset-9 {
-    transform: translateX(-50%) translateY(180px);
-}
+/* Offset styles removed - events consolidated by date */
 
 .category-timeline-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    border: 1px solid #fff;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     transition: all 0.3s ease;
-}
-
-.category-timeline.full-screen .category-timeline-dot {
-    width: 10px;
-    height: 10px;
-    border-width: 2px;
+    opacity: 0.4;
 }
 
 .category-timeline-point:hover .category-timeline-dot {
-    transform: scale(1.5);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    width: 5px;
+    opacity: 1;
+    transform: translateX(-50%);
+    box-shadow: 0 0 12px currentColor;
+    filter: brightness(1.3);
 }
 
 .category-timeline-point.active .category-timeline-dot {
-    transform: scale(1.8);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    width: 6px;
+    opacity: 1;
+    transform: translateX(-50%);
+    box-shadow: 0 0 18px currentColor;
+    filter: brightness(1.5);
 }
 
 /* Category-specific dot colors - Updated 2026-01-03 */
@@ -2159,7 +2322,7 @@ body {
     position: relative;
     height: 35px;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.7);
     overflow-x: auto;
@@ -2215,19 +2378,19 @@ body {
 
 .timeline-bar-container {
     position: relative;
-    height: 40px;
+    height: 15px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 8px;
     overflow: hidden;
 }
 
 .timeline-bar {
     position: relative;
     width: 100%;
-    height: 8px;
+    height: 4px;
     background: transparent; /* No default background */
-    border-radius: 4px;
-    margin: 10px 0;
+    border-radius: 2px;
+    margin: 2px 0;
     overflow: visible;
 }
 
@@ -2460,8 +2623,8 @@ body {
 }
 
 .timeline-track {
-    margin-bottom: 25px;
-    padding: 15px 20px;
+    margin-bottom: 5px;
+    padding: 10px 15px;
     background: rgba(99, 92, 92, 0.7);
     border-radius: 8px;
     border: 1px solid rgba(102, 126, 234, 0.1);
@@ -2481,8 +2644,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
     border-bottom: 2px solid transparent;
 }
 

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Date - Iran History Timeline</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .date-picker-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .date-picker-container {
+            background: rgba(44, 62, 80, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow-y: auto;
+            margin: 20px auto;
+        }
+
+        .date-picker-container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .date-picker-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .date-picker-container::-webkit-scrollbar-thumb {
+            background: rgba(74, 144, 226, 0.5);
+            border-radius: 10px;
+        }
+
+        .date-picker-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(74, 144, 226, 0.7);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .date-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group label {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .date-input-large {
+            padding: 18px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .date-input-large:focus {
+            outline: none;
+            border-color: rgba(74, 144, 226, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+        }
+
+        .date-input-large::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .date-range-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #4a90e2;
+        }
+
+        .date-range-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            flex: 1;
+            padding: 18px 30px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #357abd, #2868a8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            flex: 1;
+            padding: 18px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            display: none;
+            background: rgba(231, 76, 60, 0.2);
+            border: 1px solid rgba(231, 76, 60, 0.4);
+            color: #e74c3c;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Events Display Section */
+        .events-section {
+            display: none;
+            margin-top: 30px;
+            animation: slideIn 0.5s ease;
+        }
+
+        .events-section.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .events-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .events-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .events-count-badge {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .event-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(74, 144, 226, 0.5);
+            transform: translateX(5px);
+        }
+
+        .event-card.expanded {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(74, 144, 226, 0.7);
+            transform: translateX(0);
+        }
+
+        .event-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+
+        .event-title {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .event-type {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .event-type.event {
+            background: rgba(74, 144, 226, 0.3);
+            color: #4a90e2;
+            border: 1px solid rgba(74, 144, 226, 0.5);
+        }
+
+        .event-type.death {
+            background: rgba(231, 76, 60, 0.3);
+            color: #e74c3c;
+            border: 1px solid rgba(231, 76, 60, 0.5);
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .event-meta-item {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+        }
+
+        .event-meta-item strong {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .event-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .event-expandable {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease, margin-top 0.3s ease;
+        }
+
+        .event-card.expanded .event-expandable {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 15px;
+        }
+
+        .event-details {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid rgba(74, 144, 226, 0.5);
+        }
+
+        .event-details-item {
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .event-details-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .event-details-label {
+            color: rgba(74, 144, 226, 0.9);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .event-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .event-link {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.4);
+            border-radius: 6px;
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .event-link:hover {
+            background: rgba(74, 144, 226, 0.3);
+            border-color: rgba(74, 144, 226, 0.6);
+        }
+
+        .expand-indicator {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card.expanded .expand-indicator {
+            transform: rotate(180deg);
+        }
+
+        .view-timeline-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .view-timeline-btn:hover {
+            background: linear-gradient(135deg, #357abd, #2868a8);
+            transform: translateY(-2px);
+        }
+
+        .no-events-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .no-events-message .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .new-search-btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .new-search-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="date-picker-page">
+        <div class="date-picker-container">
+            <div class="page-header">
+                <h1>📅 Select a Date</h1>
+                <p>Choose a date to view historical events from Iran</p>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+
+            <form class="date-form" id="dateForm" onsubmit="handleDateSubmit(event)">
+                <div class="form-group">
+                    <label for="dateInput">Select Date:</label>
+                    <input 
+                        type="date" 
+                        id="dateInput" 
+                        class="date-input-large"
+                        min="1796-01-01"
+                        max="2025-12-31"
+                        required
+                    >
+                </div>
+
+                <div class="date-range-info">
+                    <p><strong>📊 Available Date Range:</strong></p>
+                    <p>From: January 1, 1796 (Qajar Era)</p>
+                    <p>To: December 31, 2025 (Islamic Republic)</p>
+                </div>
+
+                <div class="button-group">
+                    <a href="timeline.html" class="btn-secondary">← Back</a>
+                    <button type="submit" class="btn-primary">View Events →</button>
+                </div>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading events...</p>
+            </div>
+
+            <!-- Events Display Section -->
+            <div class="events-section" id="eventsSection">
+                <div class="events-header">
+                    <h3 id="selectedDateDisplay">Events</h3>
+                    <span class="events-count-badge" id="eventsCount">0 events</span>
+                </div>
+                <div class="events-list" id="eventsList">
+                    <!-- Events will be dynamically inserted here -->
+                </div>
+                <button class="new-search-btn" onclick="resetSearch()">🔍 Search Another Date</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allEvents = [];
+        
+        async function loadEvents() {
+            try {
+                const response = await fetch('assets/data/merged_data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                // Flatten all arrays from all keys into a single array
+                allEvents = Object.values(data).flat();
+                console.log('Loaded events:', allEvents.length);
+            } catch (error) {
+                console.error('Failed to load events:', error);
+                showError('Failed to load events data. Please refresh the page.');
+            }
+        }
+        
+        async function handleDateSubmit(event) {
+            event.preventDefault();
+            
+            const dateInput = document.getElementById('dateInput');
+            const selectedDate = dateInput.value;
+            const errorMessage = document.getElementById('errorMessage');
+            const loading = document.getElementById('loading');
+            const dateForm = document.getElementById('dateForm');
+            const eventsSection = document.getElementById('eventsSection');
+            
+            if (!selectedDate) {
+                showError('Please select a date');
+                return;
+            }
+            
+            // Validate date range
+            const selectedDateObj = new Date(selectedDate);
+            const minDate = new Date('1796-01-01');
+            const maxDate = new Date('2025-12-31');
+            
+            if (selectedDateObj < minDate || selectedDateObj > maxDate) {
+                showError('Please select a date between 1796 and 2025');
+                return;
+            }
+            
+            // Hide error and form, show loading
+            errorMessage.classList.remove('show');
+            dateForm.style.display = 'none';
+            loading.classList.add('show');
+            eventsSection.classList.remove('show');
+            
+            // Load events if not already loaded
+            if (allEvents.length === 0) {
+                await loadEvents();
+            }
+            
+            // Filter events for the selected date
+            setTimeout(() => {
+                const eventsOnDate = allEvents.filter(event => {
+                    return event.date_gregorian === selectedDate;
+                });
+                
+                // Hide loading
+                loading.classList.remove('show');
+                
+                // Display events
+                displayEvents(eventsOnDate, selectedDate);
+            }, 500);
+        }
+        
+        function displayEvents(events, selectedDate) {
+            const eventsSection = document.getElementById('eventsSection');
+            const eventsList = document.getElementById('eventsList');
+            const eventsCount = document.getElementById('eventsCount');
+            const selectedDateDisplay = document.getElementById('selectedDateDisplay');
+            
+            // Format date for display
+            const dateObj = new Date(selectedDate + 'T00:00:00');
+            const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            selectedDateDisplay.textContent = `Events on ${formattedDate}`;
+            eventsCount.textContent = `${events.length} event${events.length !== 1 ? 's' : ''}`;
+            
+            // Clear previous events
+            eventsList.innerHTML = '';
+            
+            if (events.length === 0) {
+                eventsList.innerHTML = `
+                    <div class="no-events-message">
+                        <div class="icon">📭</div>
+                        <h3>No Events Found</h3>
+                        <p>There are no recorded events on ${formattedDate}</p>
+                    </div>
+                `;
+            } else {
+                events.forEach((event, index) => {
+                    const eventCard = createEventCard(event, index);
+                    eventsList.appendChild(eventCard);
+                });
+            }
+            
+            // Show events section
+            eventsSection.classList.add('show');
+        }
+        
+        function createEventCard(event, index) {
+            const card = document.createElement('div');
+            card.className = 'event-card';
+            
+            const eventType = event.Death === 1 ? 'death' : 'event';
+            const title = event.title_english || event.title || 'Untitled Event';
+            const persianTitle = event.title || '';
+            const era = event.era_english || event.era_persian || 'Unknown Era';
+            const persianEra = event.era_persian || '';
+            
+            // Determine category from the binary flags
+            const categories = [];
+            const categoryMap = {
+                'Crime/Safety': 'Crime/Safety',
+                'Economy': 'Economy',
+                'Health': 'Health',
+                'Natural Disaster': 'Natural Disaster',
+                'Politics': 'Politics',
+                'Social': 'Social',
+                'Sports/Entertainment': 'Sports/Entertainment',
+                'Technology/Science': 'Technology/Science',
+                'Death': 'Death'
+            };
+            
+            for (const [key, label] of Object.entries(categoryMap)) {
+                if (event[key] === 1) {
+                    categories.push(label);
+                }
+            }
+            
+            const category = categories.length > 0 ? categories.join(', ') : 'Uncategorized';
+            
+            // Parse dates
+            const gregorianDate = event.date_gregorian || 'Unknown';
+            const jalaliDate = event.date_jalali || 'Unknown';
+            
+            // Parse links
+            const persianLinks = event.persian_wiki_links ? event.persian_wiki_links.split(',').map(link => link.trim()).filter(link => link) : [];
+            const englishLinks = event.english_wiki_links ? event.english_wiki_links.split(',').map(link => link.trim()).filter(link => link) : [];
+            
+            card.innerHTML = `
+                <div class="event-card-header">
+                    <h4 class="event-title">${title}<span class="expand-indicator">▼</span></h4>
+                    <span class="event-type ${eventType}">${eventType}</span>
+                </div>
+                <div class="event-meta">
+                    <div class="event-meta-item">
+                        <strong>🏛️ Era:</strong> ${era}
+                    </div>
+                    <div class="event-meta-item">
+                        <strong>📂 Category:</strong> ${category}
+                    </div>
+                </div>
+                ${persianTitle && persianTitle !== title ? `
+                    <p class="event-description">${persianTitle}</p>
+                ` : ''}
+                
+                <div class="event-expandable">
+                    <div class="event-details">
+                        ${event.details ? `
+                            <div class="event-details-item">
+                                <div class="event-details-label">📝 Additional Details:</div>
+                                <div>${event.details}</div>
+                            </div>
+                        ` : ''}
+                        
+                        <div class="event-details-item">
+                            <div class="event-details-label">📅 Dates:</div>
+                            <div>Gregorian: ${gregorianDate}</div>
+                            <div>Jalali: ${jalaliDate}</div>
+                        </div>
+                        
+                        ${persianEra ? `
+                            <div class="event-details-item">
+                                <div class="event-details-label">🏛️ Era (Persian):</div>
+                                <div>${persianEra}</div>
+                            </div>
+                        ` : ''}
+                        
+                        ${(persianLinks.length > 0 || englishLinks.length > 0) ? `
+                            <div class="event-details-item">
+                                <div class="event-details-label">🔗 References:</div>
+                                <div class="event-links">
+                                    ${englishLinks.map(link => `<a href="${link}" target="_blank" class="event-link" onclick="event.stopPropagation()">🇬🇧 Wikipedia</a>`).join('')}
+                                    ${persianLinks.map(link => `<a href="${link}" target="_blank" class="event-link" onclick="event.stopPropagation()">🇮🇷 ویکی‌پدیا</a>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        <button class="view-timeline-btn" onclick="viewInTimeline(event, '${event.date_gregorian}', ${index})">
+                            📊 View in Timeline
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Add click handler to toggle expand/collapse
+            card.onclick = (e) => {
+                // Don't toggle if clicking on a link or button
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('.view-timeline-btn')) {
+                    return;
+                }
+                card.classList.toggle('expanded');
+            };
+            
+            return card;
+        }
+        
+        function viewInTimeline(e, date, index) {
+            e.stopPropagation();
+            sessionStorage.setItem('selectedDate', date);
+            sessionStorage.setItem('selectedEventIndex', index);
+            window.location.href = `timeline.html?date=${date}`;
+        }
+        
+        function resetSearch() {
+            const dateForm = document.getElementById('dateForm');
+            const eventsSection = document.getElementById('eventsSection');
+            
+            dateForm.style.display = 'flex';
+            eventsSection.classList.remove('show');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function showError(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show');
+            
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Set today's date as default (if within range)
+        window.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('dateInput');
+            const today = new Date();
+            const maxDate = new Date('2025-12-31');
+            
+            // Set to today or max date, whichever is earlier
+            const defaultDate = today <= maxDate ? today : maxDate;
+            dateInput.value = defaultDate.toISOString().split('T')[0];
+        });
+    </script>
+</body>
+</html>
